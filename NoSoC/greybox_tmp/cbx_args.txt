@@ -1,0 +1,13 @@
+INTENDED_DEVICE_FAMILY="Cyclone V"
+INVERT_INPUT_CLOCKS=OFF
+LPM_HINT=UNUSED
+LPM_TYPE=altddio_in
+WIDTH=1
+DEVICE_FAMILY="Cyclone V"
+CBX_AUTO_BLACKBOX=ALL
+aset
+datain
+dataout_h
+dataout_l
+inclock
+inclocken

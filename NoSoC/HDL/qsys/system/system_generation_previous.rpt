@@ -1,0 +1,110 @@
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate D:\UltraSound_hdl_v1_2018\NoSoC\HDL\qsys\system.qsys --synthesis=VERILOG --output-directory=D:\UltraSound_hdl_v1_2018\NoSoC\HDL\qsys\system\synthesis --family="Cyclone V" --part=5CSXFC6D6F31C6
+Progress: Loading qsys/system.qsys
+Progress: Reading input file
+Progress: Adding ad9276_spi [altera_avalon_spi 17.1]
+Progress: Parameterizing module ad9276_spi
+Progress: Adding clk_0 [clock_source 17.1]
+Progress: Parameterizing module clk_0
+Progress: Adding general_cnt [altera_avalon_pio 17.1]
+Progress: Parameterizing module general_cnt
+Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 17.1]
+Progress: Parameterizing module in_system_sources_probes_0
+Progress: Adding in_system_sources_probes_1 [altera_in_system_sources_probes 17.1]
+Progress: Parameterizing module in_system_sources_probes_1
+Progress: Adding in_system_sources_probes_2 [altera_in_system_sources_probes 17.1]
+Progress: Parameterizing module in_system_sources_probes_2
+Progress: Adding lm96570_spi_in_0 [altera_avalon_pio 17.1]
+Progress: Parameterizing module lm96570_spi_in_0
+Progress: Adding lm96570_spi_in_1 [altera_avalon_pio 17.1]
+Progress: Parameterizing module lm96570_spi_in_1
+Progress: Adding lm96570_spi_in_2 [altera_avalon_pio 17.1]
+Progress: Parameterizing module lm96570_spi_in_2
+Progress: Adding lm96570_spi_num_of_bits [altera_avalon_pio 17.1]
+Progress: Parameterizing module lm96570_spi_num_of_bits
+Progress: Adding lm96570_spi_out_0 [altera_avalon_pio 17.1]
+Progress: Parameterizing module lm96570_spi_out_0
+Progress: Adding lm96570_spi_out_1 [altera_avalon_pio 17.1]
+Progress: Parameterizing module lm96570_spi_out_1
+Progress: Adding lm96570_spi_out_2 [altera_avalon_pio 17.1]
+Progress: Parameterizing module lm96570_spi_out_2
+Progress: Adding master_0 [altera_jtag_avalon_master 17.1]
+Progress: Parameterizing module master_0
+Progress: Adding pll_0 [altera_pll 17.1]
+Progress: Parameterizing module pll_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: system.lm96570_spi_out_0: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: system.lm96570_spi_out_1: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: system.lm96570_spi_out_2: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: system.pll_0: The legal reference clock frequency is 5.0 MHz..800.0 MHz
+Info: system.pll_0: Able to implement PLL with user settings
+Warning: system.ad9276_spi: Interrupt sender ad9276_spi.irq is not connected to an interrupt receiver
+Info: system: Generating system "system" for QUARTUS_SYNTH
+Info: ad9276_spi: Starting RTL generation for module 'system_ad9276_spi'
+Info: ad9276_spi:   Generation command is [exec C:/intelfpga/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/17.1/quartus/bin64/perl/lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi -- C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi/generate_rtl.pl --name=system_ad9276_spi --dir=C:/Users/DAVIDA~1/AppData/Local/Temp/alt7806_5946555463981132974.dir/0002_ad9276_spi_gen/ --quartus_dir=C:/intelfpga/17.1/quartus --verilog --config=C:/Users/DAVIDA~1/AppData/Local/Temp/alt7806_5946555463981132974.dir/0002_ad9276_spi_gen//system_ad9276_spi_component_configuration.pl  --do_build_sim=0  ]
+Info: ad9276_spi: Done RTL generation for module 'system_ad9276_spi'
+Info: ad9276_spi: "system" instantiated altera_avalon_spi "ad9276_spi"
+Info: general_cnt: Starting RTL generation for module 'system_general_cnt'
+Info: general_cnt:   Generation command is [exec C:/intelfpga/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/17.1/quartus/bin64/perl/lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=system_general_cnt --dir=C:/Users/DAVIDA~1/AppData/Local/Temp/alt7806_5946555463981132974.dir/0003_general_cnt_gen/ --quartus_dir=C:/intelfpga/17.1/quartus --verilog --config=C:/Users/DAVIDA~1/AppData/Local/Temp/alt7806_5946555463981132974.dir/0003_general_cnt_gen//system_general_cnt_component_configuration.pl  --do_build_sim=0  ]
+Info: general_cnt: Done RTL generation for module 'system_general_cnt'
+Info: general_cnt: "system" instantiated altera_avalon_pio "general_cnt"
+Info: in_system_sources_probes_0: "system" instantiated altera_in_system_sources_probes "in_system_sources_probes_0"
+Info: lm96570_spi_in_2: Starting RTL generation for module 'system_lm96570_spi_in_2'
+Info: lm96570_spi_in_2:   Generation command is [exec C:/intelfpga/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/17.1/quartus/bin64/perl/lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=system_lm96570_spi_in_2 --dir=C:/Users/DAVIDA~1/AppData/Local/Temp/alt7806_5946555463981132974.dir/0005_lm96570_spi_in_2_gen/ --quartus_dir=C:/intelfpga/17.1/quartus --verilog --config=C:/Users/DAVIDA~1/AppData/Local/Temp/alt7806_5946555463981132974.dir/0005_lm96570_spi_in_2_gen//system_lm96570_spi_in_2_component_configuration.pl  --do_build_sim=0  ]
+Info: lm96570_spi_in_2: Done RTL generation for module 'system_lm96570_spi_in_2'
+Info: lm96570_spi_in_2: "system" instantiated altera_avalon_pio "lm96570_spi_in_2"
+Info: lm96570_spi_num_of_bits: Starting RTL generation for module 'system_lm96570_spi_num_of_bits'
+Info: lm96570_spi_num_of_bits:   Generation command is [exec C:/intelfpga/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/17.1/quartus/bin64/perl/lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=system_lm96570_spi_num_of_bits --dir=C:/Users/DAVIDA~1/AppData/Local/Temp/alt7806_5946555463981132974.dir/0006_lm96570_spi_num_of_bits_gen/ --quartus_dir=C:/intelfpga/17.1/quartus --verilog --config=C:/Users/DAVIDA~1/AppData/Local/Temp/alt7806_5946555463981132974.dir/0006_lm96570_spi_num_of_bits_gen//system_lm96570_spi_num_of_bits_component_configuration.pl  --do_build_sim=0  ]
+Info: lm96570_spi_num_of_bits: Done RTL generation for module 'system_lm96570_spi_num_of_bits'
+Info: lm96570_spi_num_of_bits: "system" instantiated altera_avalon_pio "lm96570_spi_num_of_bits"
+Info: lm96570_spi_out_0: Starting RTL generation for module 'system_lm96570_spi_out_0'
+Info: lm96570_spi_out_0:   Generation command is [exec C:/intelfpga/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/17.1/quartus/bin64/perl/lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=system_lm96570_spi_out_0 --dir=C:/Users/DAVIDA~1/AppData/Local/Temp/alt7806_5946555463981132974.dir/0007_lm96570_spi_out_0_gen/ --quartus_dir=C:/intelfpga/17.1/quartus --verilog --config=C:/Users/DAVIDA~1/AppData/Local/Temp/alt7806_5946555463981132974.dir/0007_lm96570_spi_out_0_gen//system_lm96570_spi_out_0_component_configuration.pl  --do_build_sim=0  ]
+Info: lm96570_spi_out_0: Done RTL generation for module 'system_lm96570_spi_out_0'
+Info: lm96570_spi_out_0: "system" instantiated altera_avalon_pio "lm96570_spi_out_0"
+Info: lm96570_spi_out_2: Starting RTL generation for module 'system_lm96570_spi_out_2'
+Info: lm96570_spi_out_2:   Generation command is [exec C:/intelfpga/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/17.1/quartus/bin64/perl/lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/17.1/quartus/sopc_builder/bin -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=system_lm96570_spi_out_2 --dir=C:/Users/DAVIDA~1/AppData/Local/Temp/alt7806_5946555463981132974.dir/0008_lm96570_spi_out_2_gen/ --quartus_dir=C:/intelfpga/17.1/quartus --verilog --config=C:/Users/DAVIDA~1/AppData/Local/Temp/alt7806_5946555463981132974.dir/0008_lm96570_spi_out_2_gen//system_lm96570_spi_out_2_component_configuration.pl  --do_build_sim=0  ]
+Info: lm96570_spi_out_2: Done RTL generation for module 'system_lm96570_spi_out_2'
+Info: lm96570_spi_out_2: "system" instantiated altera_avalon_pio "lm96570_spi_out_2"
+Info: master_0: "system" instantiated altera_jtag_avalon_master "master_0"
+Info: pll_0: "system" instantiated altera_pll "pll_0"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_006: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_007: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_008: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "system" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: rst_controller: "system" instantiated altera_reset_controller "rst_controller"
+Info: jtag_phy_embedded_in_jtag_master: "master_0" instantiated altera_jtag_dc_streaming "jtag_phy_embedded_in_jtag_master"
+Info: timing_adt: "master_0" instantiated timing_adapter "timing_adt"
+Info: fifo: "master_0" instantiated altera_avalon_sc_fifo "fifo"
+Info: b2p: "master_0" instantiated altera_avalon_st_bytes_to_packets "b2p"
+Info: p2b: "master_0" instantiated altera_avalon_st_packets_to_bytes "p2b"
+Info: transacto: "master_0" instantiated altera_avalon_packets_to_master "transacto"
+Info: b2p_adapter: "master_0" instantiated channel_adapter "b2p_adapter"
+Info: p2b_adapter: "master_0" instantiated channel_adapter "p2b_adapter"
+Info: master_0_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "master_0_master_translator"
+Info: lm96570_spi_in_2_s1_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "lm96570_spi_in_2_s1_translator"
+Info: master_0_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "master_0_master_agent"
+Info: lm96570_spi_in_2_s1_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "lm96570_spi_in_2_s1_agent"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: master_0_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "master_0_master_limiter"
+Info: Reusing file D:/UltraSound_hdl_v1_2018/NoSoC/HDL/qsys/system/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file D:/UltraSound_hdl_v1_2018/NoSoC/HDL/qsys/system/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file D:/UltraSound_hdl_v1_2018/NoSoC/HDL/qsys/system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: system: Done "system" with 33 modules, 49 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

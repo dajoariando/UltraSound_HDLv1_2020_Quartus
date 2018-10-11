@@ -1,0 +1,50 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst system.master_0.clk_rst -pg 1
+preplace inst system.master_0.p2b_adapter -pg 1
+preplace inst system.master_0.fifo -pg 1
+preplace inst system.master_0 -pg 1 -lvl 2 -y 800
+preplace inst system.in_system_sources_probes_0 -pg 1 -lvl 1 -y 160
+preplace inst system.lm96570_spi_out_0 -pg 1 -lvl 3 -y 770
+preplace inst system.in_system_sources_probes_1 -pg 1 -lvl 1 -y 270
+preplace inst system.lm96570_spi_out_1 -pg 1 -lvl 3 -y 670
+preplace inst system.lm96570_spi_in_0 -pg 1 -lvl 3 -y 250
+preplace inst system.in_system_sources_probes_2 -pg 1 -lvl 1 -y 310
+preplace inst system.pll_0 -pg 1 -lvl 2 -y 490
+preplace inst system.lm96570_spi_out_2 -pg 1 -lvl 3 -y 870
+preplace inst system.lm96570_spi_in_1 -pg 1 -lvl 3 -y 350
+preplace inst system.lm96570_spi_in_2 -pg 1 -lvl 3 -y 450
+preplace inst system.master_0.transacto -pg 1
+preplace inst system.master_0.clk_src -pg 1
+preplace inst system.master_0.p2b -pg 1
+preplace inst system.master_0.b2p -pg 1
+preplace inst system.master_0.jtag_phy_embedded_in_jtag_master -pg 1
+preplace inst system.master_0.b2p_adapter -pg 1
+preplace inst system.lm96570_spi_num_of_bits -pg 1 -lvl 3 -y 570
+preplace inst system.general_cnt -pg 1 -lvl 3 -y 150
+preplace inst system -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst system.master_0.timing_adt -pg 1
+preplace inst system.clk_0 -pg 1 -lvl 1 -y 730
+preplace inst system.ad9276_spi -pg 1 -lvl 3 -y 30
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)system.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)system.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>system</net_container>(MASTER)system.pll_0_outclk0,(MASTER)pll_0.outclk0) 1 2 2 NJ 560 NJ
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)lm96570_spi_out_2.external_connection,(SLAVE)system.lm96570_spi_out_2) 1 0 3 NJ 900 NJ 900 NJ
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)system.lm96570_spi_num_of_bits,(SLAVE)lm96570_spi_num_of_bits.external_connection) 1 0 3 NJ 580 NJ 580 NJ
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)system.datain,(SLAVE)in_system_sources_probes_0.probes) 1 0 1 NJ
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)system.num_of_bits,(SLAVE)in_system_sources_probes_1.sources) 1 0 1 NJ
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)system.pll_0_locked,(SLAVE)pll_0.locked) 1 0 2 NJ 500 NJ
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)system.lm96570_spi_out_1,(SLAVE)lm96570_spi_out_1.external_connection) 1 0 3 NJ 700 NJ 700 NJ
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)system.lm96570_spi_out_0,(SLAVE)lm96570_spi_out_0.external_connection) 1 0 3 NJ 720 NJ 740 NJ
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)system.lm96570_spi_in_2,(SLAVE)lm96570_spi_in_2.external_connection) 1 0 3 NJ 480 NJ 480 NJ
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)in_system_sources_probes_2.sources,(SLAVE)system.issp_cnt) 1 0 1 NJ
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)system.lm96570_spi_in_0,(SLAVE)lm96570_spi_in_0.external_connection) 1 0 3 NJ 240 NJ 240 NJ
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)lm96570_spi_in_1.external_connection,(SLAVE)system.lm96570_spi_in_1) 1 0 3 NJ 260 NJ 380 NJ
+preplace netloc FAN_OUT<net_container>system</net_container>(SLAVE)lm96570_spi_num_of_bits.s1,(SLAVE)lm96570_spi_in_1.s1,(SLAVE)lm96570_spi_in_2.s1,(MASTER)master_0.master,(SLAVE)general_cnt.s1,(SLAVE)lm96570_spi_in_0.s1,(SLAVE)lm96570_spi_out_1.s1,(SLAVE)lm96570_spi_out_0.s1,(SLAVE)ad9276_spi.spi_control_port,(SLAVE)lm96570_spi_out_2.s1) 1 2 1 700
+preplace netloc FAN_OUT<net_container>system</net_container>(SLAVE)lm96570_spi_out_0.clk,(SLAVE)ad9276_spi.clk,(SLAVE)master_0.clk,(SLAVE)lm96570_spi_out_2.clk,(SLAVE)general_cnt.clk,(SLAVE)lm96570_spi_num_of_bits.clk,(MASTER)clk_0.clk,(SLAVE)lm96570_spi_in_0.clk,(SLAVE)lm96570_spi_out_1.clk,(SLAVE)lm96570_spi_in_1.clk,(SLAVE)pll_0.refclk,(SLAVE)lm96570_spi_in_2.clk) 1 1 2 420 720 740
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)ad9276_spi.external,(SLAVE)system.ad9276_spi_external) 1 0 3 NJ 60 NJ 60 NJ
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)system.general_cnt,(SLAVE)general_cnt.external_connection) 1 0 3 NJ 150 NJ 150 NJ
+preplace netloc FAN_OUT<net_container>system</net_container>(SLAVE)lm96570_spi_in_2.reset,(SLAVE)lm96570_spi_out_0.reset,(SLAVE)lm96570_spi_num_of_bits.reset,(SLAVE)general_cnt.reset,(SLAVE)lm96570_spi_out_1.reset,(SLAVE)ad9276_spi.reset,(SLAVE)lm96570_spi_in_1.reset,(SLAVE)lm96570_spi_in_0.reset,(MASTER)clk_0.clk_reset,(SLAVE)master_0.clk_reset,(SLAVE)pll_0.reset,(SLAVE)lm96570_spi_out_2.reset) 1 1 2 440 760 760
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)system.dataout,(SLAVE)in_system_sources_probes_0.sources) 1 0 1 NJ
+levelinfo -pg 1 0 150 1080
+levelinfo -hier system 160 230 520 810 970

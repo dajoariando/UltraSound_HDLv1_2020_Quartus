@@ -1,0 +1,56 @@
+`timescale 1ps / 1ps
+
+module Ultrasound_FSM_tb;
+
+	parameter timescale_ref = 1000000; // reference scale based on timescale
+	parameter CLK_RATE_HZ = 50; // in MHz
+	localparam integer clockticks = (timescale_ref / CLK_RATE_HZ) / 2.0;
+	
+	reg START;
+	wire DONE;
+
+	wire TX_EN;
+	wire ADC_START;
+	
+	// timing parameters
+	reg [31:0] TX_pulse_length,
+	reg [31:0] ADC_START_length,
+	
+	reg CLK;                  
+	reg RESET;
+
+	Ultrasound_FSM DUT
+	(
+		// Control Signals
+		.START		(START	),  	//Starting of TX Firing and Data Acquisiton
+		.DONE		(DONE	),		//Notification of Completed Data Acquistion
+		.TX_EN		(TX_EN	),    	//TX_EN Signal
+		.ADC_START	(ADC_START),  	//ADC_START Signal
+		
+		// timing parameters
+		.TX_pulse_length	(TX_pulse_length),
+		.ADC_START_length	(ADC_START_length),
+		
+		// System Signals
+		.CLK	(CLK),
+		.RESET	(RESET)
+	);
+	
+	
+	initial begin
+		START = 1'b0;
+		CLK	= 1'b0;
+		RESET = 1'b0;
+		TX_pulse_length = 50;
+		ADC_START_length = 5;
+		#(clockticks*2) RESET = 1'b1;
+		#(clockticks*2) RESET = 1'b0;
+		#(clockticks*2) START = 1'b1;
+		#(clockticks*2) START = 1'b0; 
+	end
+	
+	always begin
+		#clockticks CLK = ~CLK;
+	end
+
+endmodule
