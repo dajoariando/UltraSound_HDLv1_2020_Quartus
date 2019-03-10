@@ -1,5 +1,5 @@
 Info: Start Nativelink Simulation process
-executing command line: ip-make-simscript --nativelink-mode --output-directory=DE10_Standard_golden_top_iputf_input --spd=Z:/dja62/Quartus/UltraSound_hdl_v1_2018/NoSoC/HDL/megafunctions/pll_adc_datain.spd 
+executing command line: ip-make-simscript --nativelink-mode --output-directory=DE10_Standard_golden_top_iputf_input --spd=D:/UltraSound_hdl_v1_2018/NoSoC/HDL/megafunctions/pll_adc_datain.spd 
 
 ========= EDA Simulation Settings =====================
 
