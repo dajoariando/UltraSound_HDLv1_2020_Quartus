@@ -1000,50 +1000,28 @@
    dir="end" />
  <interface
    name="lm96570_spi_in_0"
-   internal="lm96570_spi_in_0.external_connection"
-   type="conduit"
-   dir="end" />
+   internal="lm96570_spi_in_0.external_connection" />
  <interface
    name="lm96570_spi_in_1"
-   internal="lm96570_spi_in_1.external_connection"
-   type="conduit"
-   dir="end" />
+   internal="lm96570_spi_in_1.external_connection" />
  <interface
    name="lm96570_spi_in_2"
-   internal="lm96570_spi_in_2.external_connection"
-   type="conduit"
-   dir="end" />
+   internal="lm96570_spi_in_2.external_connection" />
  <interface
    name="lm96570_spi_num_of_bits"
-   internal="lm96570_spi_num_of_bits.external_connection"
-   type="conduit"
-   dir="end" />
+   internal="lm96570_spi_num_of_bits.external_connection" />
  <interface
    name="lm96570_spi_out_0"
-   internal="lm96570_spi_out_0.external_connection"
-   type="conduit"
-   dir="end" />
+   internal="lm96570_spi_out_0.external_connection" />
  <interface
    name="lm96570_spi_out_1"
-   internal="lm96570_spi_out_1.external_connection"
-   type="conduit"
-   dir="end" />
+   internal="lm96570_spi_out_1.external_connection" />
  <interface
    name="lm96570_spi_out_2"
-   internal="lm96570_spi_out_2.external_connection"
-   type="conduit"
-   dir="end" />
- <interface
-   name="lm96570_spi_pll_outclk0"
-   internal="lm96570_spi_pll.outclk0"
-   type="clock"
-   dir="start" />
+   internal="lm96570_spi_out_2.external_connection" />
+ <interface name="lm96570_spi_pll_outclk0" internal="lm96570_spi_pll.outclk0" />
  <interface name="memory" internal="hps_0.memory" type="conduit" dir="end" />
- <interface
-   name="mux_control"
-   internal="mux_control.external_connection"
-   type="conduit"
-   dir="end" />
+ <interface name="mux_control" internal="mux_control.external_connection" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
  <module
    name="ADC_INIT_DELAY"
@@ -2172,7 +2150,7 @@
    name="lm96570_spi_in_0"
    kind="altera_avalon_pio"
    version="17.1"
-   enabled="1">
+   enabled="0">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -2190,7 +2168,7 @@
    name="lm96570_spi_in_1"
    kind="altera_avalon_pio"
    version="17.1"
-   enabled="1">
+   enabled="0">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -2208,7 +2186,7 @@
    name="lm96570_spi_in_2"
    kind="altera_avalon_pio"
    version="17.1"
-   enabled="1">
+   enabled="0">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -2226,7 +2204,7 @@
    name="lm96570_spi_num_of_bits"
    kind="altera_avalon_pio"
    version="17.1"
-   enabled="1">
+   enabled="0">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -2244,7 +2222,7 @@
    name="lm96570_spi_out_0"
    kind="altera_avalon_pio"
    version="17.1"
-   enabled="1">
+   enabled="0">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -2262,7 +2240,7 @@
    name="lm96570_spi_out_1"
    kind="altera_avalon_pio"
    version="17.1"
-   enabled="1">
+   enabled="0">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -2280,7 +2258,7 @@
    name="lm96570_spi_out_2"
    kind="altera_avalon_pio"
    version="17.1"
-   enabled="1">
+   enabled="0">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -2294,7 +2272,7 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="6" />
  </module>
- <module name="lm96570_spi_pll" kind="altera_pll" version="17.1" enabled="1">
+ <module name="lm96570_spi_pll" kind="altera_pll" version="17.1" enabled="0">
   <parameter name="debug_print_output" value="false" />
   <parameter name="debug_use_rbc_taf_method" value="false" />
   <parameter name="device" value="5CSXFC6D6F31C6" />
@@ -2519,7 +2497,7 @@
    name="mux_control"
    kind="altera_avalon_pio"
    version="17.1"
-   enabled="1">
+   enabled="0">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />

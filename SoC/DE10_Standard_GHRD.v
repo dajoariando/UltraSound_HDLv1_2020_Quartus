@@ -199,28 +199,30 @@ module DE10_Standard_GHRD(
 	input dinh_n,
 	
 	// spi for AD9276 ADC
-	output ADC_AD9276_CSB4,
-	output ADC_AD9276_CSB3,
-	output ADC_AD9276_CSB2,
+	// output ADC_AD9276_CSB4,
+	// output ADC_AD9276_CSB3,
+	// output ADC_AD9276_CSB2,
 	output ADC_AD9276_CSB1,
 	input ADC_AD9276_SDO,
 	output ADC_AD9276_SDI,
 	output ADC_AD9276_SCLK,
+	output ADC_AD9276_STBY,
+	output ADC_AD9276_PWDN,
 
 	// spi for LM96570
-	input BF_SPI_SDI,
-	output BF_SPI_SDO,
-	output BF_SPI_SCK,
-	output BF_SPI_CS_N,
+	// input BF_SPI_SDI,
+	// output BF_SPI_SDO,
+	// output BF_SPI_SCK,
+	// output BF_SPI_CS_N,
 	output BF_TX_EN_PIN,
-	output BF_RESET,
+	// output BF_RESET,
 	
 	// LM96530 TX/RX Switch
-	output TXRX_SPI_EN,		
-	output TXRX_SW_OFF,			
+	// output TXRX_SPI_EN,		
+	// output TXRX_SW_OFF,			
 
 	//control pins for Mux board
-	output [10:0] MUX_CNT,
+	// output [10:0] MUX_CNT,
 	
 	// control signals
 	output PULSER_EN,
@@ -390,20 +392,22 @@ module DE10_Standard_GHRD(
 		.hps_0_f2h_stm_hw_events_stm_hwevents  (stm_hw_events ),  //        hps_0_f2h_stm_hw_events.stm_hwevents
 		.hps_0_f2h_warm_reset_req_reset_n      (~hps_warm_reset ),      //       hps_0_f2h_warm_reset_req.reset_n
 				
-		.lm96570_spi_in_2_export               (DATA_IN[69:64]),
-        .lm96570_spi_in_1_export               (DATA_IN[63:32]),
-        .lm96570_spi_in_0_export               (DATA_IN[31:0]),
-		.lm96570_spi_num_of_bits_export        (NUM_OF_BIT),
-        .lm96570_spi_out_2_export              (RD_DATA[69:64]),
-        .lm96570_spi_out_1_export              (RD_DATA[63:32]),
-        .lm96570_spi_out_0_export              (RD_DATA[31:0]),
+		// .lm96570_spi_in_2_export               (DATA_IN[69:64]),
+        // .lm96570_spi_in_1_export               (DATA_IN[63:32]),
+        // .lm96570_spi_in_0_export               (DATA_IN[31:0]),
+		// .lm96570_spi_num_of_bits_export        (NUM_OF_BIT),
+        // .lm96570_spi_out_2_export              (RD_DATA[69:64]),
+        // .lm96570_spi_out_1_export              (RD_DATA[63:32]),
+        // .lm96570_spi_out_0_export              (RD_DATA[31:0]),
 		
         .ad9276_spi_external_MISO              (ADC_AD9276_SDO),
         .ad9276_spi_external_MOSI              (ADC_AD9276_SDI),
         .ad9276_spi_external_SCLK              (ADC_AD9276_SCLK),
-        .ad9276_spi_external_SS_n              (), // keep it high-Z
+        .ad9276_spi_external_SS_n              (ADC_AD9276_CSB1), // omit ADC_AD9276_CSB1 in Alex board to make it high-Z
 		
-        .general_cnt_out_export                ({	
+        .general_cnt_out_export                ({
+			ADC_AD9276_PWDN,
+			ADC_AD9276_STBY,
 			FSM_RESET,
 			TXRX_SW_OFF,
 			TXRX_SPI_EN,
@@ -417,7 +421,7 @@ module DE10_Standard_GHRD(
 			FSM_DONE,
 			BF_SPI_DONE
 		}),
-        .lm96570_spi_pll_outclk0_clk           (BF_CLK_2MHZ),
+        // .lm96570_spi_pll_outclk0_clk           (BF_CLK_2MHZ),
 		
 		.fifo_sink_clk_in_clk                  (ADC_CLKOUT),                   				//   fifo_sink_clk_in.clk
 		
@@ -458,7 +462,7 @@ module DE10_Standard_GHRD(
 	
 		.adc_start_pulselength_export          (ADC_START_length),          					//          adc_start_pulselength.export
 		
-		.mux_control_export                    (MUX_CNT)                     					//                    MUX_CNT.export
+		// .mux_control_export                    (MUX_CNT)                     					//                    MUX_CNT.export
 	
 	);
 	
@@ -538,6 +542,7 @@ module DE10_Standard_GHRD(
 		.fco_locked		(fco_locked)
 	);
 	
+	/*
 	// SPI for the beamformer LM96570
 	GNRL_delayed_pulser
 	#(
@@ -584,6 +589,7 @@ module DE10_Standard_GHRD(
 		.CLK				(BF_CLK_2MHZ),
 		.RESET				(BF_SPI_RESET)
 	);
+	*/
 
 	// The FSM for the ultrasound
 	GNRL_delayed_pulser
@@ -629,7 +635,8 @@ module DE10_Standard_GHRD(
 		.RESET	(FSM_RESET)
 	);
 	
-	
+	// assign ADC_AD9276_STBY = SW[0];
+	// assign ADC_AD9276_PWDN = SW[1];
 	
 endmodule
 

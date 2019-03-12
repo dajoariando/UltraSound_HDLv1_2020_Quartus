@@ -148,30 +148,6 @@
 #define FIFO_SINK_CH_H_IN_CSR_USE_WRITE_CONTROL 1
 
 /*
- * Macros for device 'mux_control', class 'altera_avalon_pio'
- * The macros are prefixed with 'MUX_CONTROL_'.
- * The prefix is the slave descriptor.
- */
-#define MUX_CONTROL_COMPONENT_TYPE altera_avalon_pio
-#define MUX_CONTROL_COMPONENT_NAME mux_control
-#define MUX_CONTROL_BASE 0x180
-#define MUX_CONTROL_SPAN 16
-#define MUX_CONTROL_END 0x18f
-#define MUX_CONTROL_BIT_CLEARING_EDGE_REGISTER 0
-#define MUX_CONTROL_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define MUX_CONTROL_CAPTURE 0
-#define MUX_CONTROL_DATA_WIDTH 11
-#define MUX_CONTROL_DO_TEST_BENCH_WIRING 0
-#define MUX_CONTROL_DRIVEN_SIM_VALUE 0
-#define MUX_CONTROL_EDGE_TYPE NONE
-#define MUX_CONTROL_FREQ 50000000
-#define MUX_CONTROL_HAS_IN 0
-#define MUX_CONTROL_HAS_OUT 1
-#define MUX_CONTROL_HAS_TRI 0
-#define MUX_CONTROL_IRQ_TYPE NONE
-#define MUX_CONTROL_RESET_VALUE 0
-
-/*
  * Macros for device 'fifo_sink_CH_H_out', class 'altera_avalon_fifo'
  * The macros are prefixed with 'FIFO_SINK_CH_H_OUT_'.
  * The prefix is the slave descriptor.
@@ -302,30 +278,6 @@
 #define ADC_INIT_DELAY_RESET_VALUE 0
 
 /*
- * Macros for device 'lm96570_spi_num_of_bits', class 'altera_avalon_pio'
- * The macros are prefixed with 'LM96570_SPI_NUM_OF_BITS_'.
- * The prefix is the slave descriptor.
- */
-#define LM96570_SPI_NUM_OF_BITS_COMPONENT_TYPE altera_avalon_pio
-#define LM96570_SPI_NUM_OF_BITS_COMPONENT_NAME lm96570_spi_num_of_bits
-#define LM96570_SPI_NUM_OF_BITS_BASE 0x1d0
-#define LM96570_SPI_NUM_OF_BITS_SPAN 16
-#define LM96570_SPI_NUM_OF_BITS_END 0x1df
-#define LM96570_SPI_NUM_OF_BITS_BIT_CLEARING_EDGE_REGISTER 0
-#define LM96570_SPI_NUM_OF_BITS_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define LM96570_SPI_NUM_OF_BITS_CAPTURE 0
-#define LM96570_SPI_NUM_OF_BITS_DATA_WIDTH 32
-#define LM96570_SPI_NUM_OF_BITS_DO_TEST_BENCH_WIRING 0
-#define LM96570_SPI_NUM_OF_BITS_DRIVEN_SIM_VALUE 0
-#define LM96570_SPI_NUM_OF_BITS_EDGE_TYPE NONE
-#define LM96570_SPI_NUM_OF_BITS_FREQ 50000000
-#define LM96570_SPI_NUM_OF_BITS_HAS_IN 0
-#define LM96570_SPI_NUM_OF_BITS_HAS_OUT 1
-#define LM96570_SPI_NUM_OF_BITS_HAS_TRI 0
-#define LM96570_SPI_NUM_OF_BITS_IRQ_TYPE NONE
-#define LM96570_SPI_NUM_OF_BITS_RESET_VALUE 0
-
-/*
  * Macros for device 'general_cnt_in', class 'altera_avalon_pio'
  * The macros are prefixed with 'GENERAL_CNT_IN_'.
  * The prefix is the slave descriptor.
@@ -372,150 +324,6 @@
 #define GENERAL_CNT_OUT_HAS_TRI 0
 #define GENERAL_CNT_OUT_IRQ_TYPE NONE
 #define GENERAL_CNT_OUT_RESET_VALUE 0
-
-/*
- * Macros for device 'lm96570_spi_out_2', class 'altera_avalon_pio'
- * The macros are prefixed with 'LM96570_SPI_OUT_2_'.
- * The prefix is the slave descriptor.
- */
-#define LM96570_SPI_OUT_2_COMPONENT_TYPE altera_avalon_pio
-#define LM96570_SPI_OUT_2_COMPONENT_NAME lm96570_spi_out_2
-#define LM96570_SPI_OUT_2_BASE 0x200
-#define LM96570_SPI_OUT_2_SPAN 16
-#define LM96570_SPI_OUT_2_END 0x20f
-#define LM96570_SPI_OUT_2_BIT_CLEARING_EDGE_REGISTER 0
-#define LM96570_SPI_OUT_2_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define LM96570_SPI_OUT_2_CAPTURE 0
-#define LM96570_SPI_OUT_2_DATA_WIDTH 6
-#define LM96570_SPI_OUT_2_DO_TEST_BENCH_WIRING 0
-#define LM96570_SPI_OUT_2_DRIVEN_SIM_VALUE 0
-#define LM96570_SPI_OUT_2_EDGE_TYPE NONE
-#define LM96570_SPI_OUT_2_FREQ 50000000
-#define LM96570_SPI_OUT_2_HAS_IN 1
-#define LM96570_SPI_OUT_2_HAS_OUT 0
-#define LM96570_SPI_OUT_2_HAS_TRI 0
-#define LM96570_SPI_OUT_2_IRQ_TYPE NONE
-#define LM96570_SPI_OUT_2_RESET_VALUE 0
-
-/*
- * Macros for device 'lm96570_spi_out_1', class 'altera_avalon_pio'
- * The macros are prefixed with 'LM96570_SPI_OUT_1_'.
- * The prefix is the slave descriptor.
- */
-#define LM96570_SPI_OUT_1_COMPONENT_TYPE altera_avalon_pio
-#define LM96570_SPI_OUT_1_COMPONENT_NAME lm96570_spi_out_1
-#define LM96570_SPI_OUT_1_BASE 0x210
-#define LM96570_SPI_OUT_1_SPAN 16
-#define LM96570_SPI_OUT_1_END 0x21f
-#define LM96570_SPI_OUT_1_BIT_CLEARING_EDGE_REGISTER 0
-#define LM96570_SPI_OUT_1_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define LM96570_SPI_OUT_1_CAPTURE 0
-#define LM96570_SPI_OUT_1_DATA_WIDTH 32
-#define LM96570_SPI_OUT_1_DO_TEST_BENCH_WIRING 0
-#define LM96570_SPI_OUT_1_DRIVEN_SIM_VALUE 0
-#define LM96570_SPI_OUT_1_EDGE_TYPE NONE
-#define LM96570_SPI_OUT_1_FREQ 50000000
-#define LM96570_SPI_OUT_1_HAS_IN 1
-#define LM96570_SPI_OUT_1_HAS_OUT 0
-#define LM96570_SPI_OUT_1_HAS_TRI 0
-#define LM96570_SPI_OUT_1_IRQ_TYPE NONE
-#define LM96570_SPI_OUT_1_RESET_VALUE 0
-
-/*
- * Macros for device 'lm96570_spi_out_0', class 'altera_avalon_pio'
- * The macros are prefixed with 'LM96570_SPI_OUT_0_'.
- * The prefix is the slave descriptor.
- */
-#define LM96570_SPI_OUT_0_COMPONENT_TYPE altera_avalon_pio
-#define LM96570_SPI_OUT_0_COMPONENT_NAME lm96570_spi_out_0
-#define LM96570_SPI_OUT_0_BASE 0x220
-#define LM96570_SPI_OUT_0_SPAN 16
-#define LM96570_SPI_OUT_0_END 0x22f
-#define LM96570_SPI_OUT_0_BIT_CLEARING_EDGE_REGISTER 0
-#define LM96570_SPI_OUT_0_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define LM96570_SPI_OUT_0_CAPTURE 0
-#define LM96570_SPI_OUT_0_DATA_WIDTH 32
-#define LM96570_SPI_OUT_0_DO_TEST_BENCH_WIRING 0
-#define LM96570_SPI_OUT_0_DRIVEN_SIM_VALUE 0
-#define LM96570_SPI_OUT_0_EDGE_TYPE NONE
-#define LM96570_SPI_OUT_0_FREQ 50000000
-#define LM96570_SPI_OUT_0_HAS_IN 1
-#define LM96570_SPI_OUT_0_HAS_OUT 0
-#define LM96570_SPI_OUT_0_HAS_TRI 0
-#define LM96570_SPI_OUT_0_IRQ_TYPE NONE
-#define LM96570_SPI_OUT_0_RESET_VALUE 0
-
-/*
- * Macros for device 'lm96570_spi_in_2', class 'altera_avalon_pio'
- * The macros are prefixed with 'LM96570_SPI_IN_2_'.
- * The prefix is the slave descriptor.
- */
-#define LM96570_SPI_IN_2_COMPONENT_TYPE altera_avalon_pio
-#define LM96570_SPI_IN_2_COMPONENT_NAME lm96570_spi_in_2
-#define LM96570_SPI_IN_2_BASE 0x230
-#define LM96570_SPI_IN_2_SPAN 16
-#define LM96570_SPI_IN_2_END 0x23f
-#define LM96570_SPI_IN_2_BIT_CLEARING_EDGE_REGISTER 0
-#define LM96570_SPI_IN_2_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define LM96570_SPI_IN_2_CAPTURE 0
-#define LM96570_SPI_IN_2_DATA_WIDTH 6
-#define LM96570_SPI_IN_2_DO_TEST_BENCH_WIRING 0
-#define LM96570_SPI_IN_2_DRIVEN_SIM_VALUE 0
-#define LM96570_SPI_IN_2_EDGE_TYPE NONE
-#define LM96570_SPI_IN_2_FREQ 50000000
-#define LM96570_SPI_IN_2_HAS_IN 0
-#define LM96570_SPI_IN_2_HAS_OUT 1
-#define LM96570_SPI_IN_2_HAS_TRI 0
-#define LM96570_SPI_IN_2_IRQ_TYPE NONE
-#define LM96570_SPI_IN_2_RESET_VALUE 0
-
-/*
- * Macros for device 'lm96570_spi_in_1', class 'altera_avalon_pio'
- * The macros are prefixed with 'LM96570_SPI_IN_1_'.
- * The prefix is the slave descriptor.
- */
-#define LM96570_SPI_IN_1_COMPONENT_TYPE altera_avalon_pio
-#define LM96570_SPI_IN_1_COMPONENT_NAME lm96570_spi_in_1
-#define LM96570_SPI_IN_1_BASE 0x240
-#define LM96570_SPI_IN_1_SPAN 16
-#define LM96570_SPI_IN_1_END 0x24f
-#define LM96570_SPI_IN_1_BIT_CLEARING_EDGE_REGISTER 0
-#define LM96570_SPI_IN_1_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define LM96570_SPI_IN_1_CAPTURE 0
-#define LM96570_SPI_IN_1_DATA_WIDTH 32
-#define LM96570_SPI_IN_1_DO_TEST_BENCH_WIRING 0
-#define LM96570_SPI_IN_1_DRIVEN_SIM_VALUE 0
-#define LM96570_SPI_IN_1_EDGE_TYPE NONE
-#define LM96570_SPI_IN_1_FREQ 50000000
-#define LM96570_SPI_IN_1_HAS_IN 0
-#define LM96570_SPI_IN_1_HAS_OUT 1
-#define LM96570_SPI_IN_1_HAS_TRI 0
-#define LM96570_SPI_IN_1_IRQ_TYPE NONE
-#define LM96570_SPI_IN_1_RESET_VALUE 0
-
-/*
- * Macros for device 'lm96570_spi_in_0', class 'altera_avalon_pio'
- * The macros are prefixed with 'LM96570_SPI_IN_0_'.
- * The prefix is the slave descriptor.
- */
-#define LM96570_SPI_IN_0_COMPONENT_TYPE altera_avalon_pio
-#define LM96570_SPI_IN_0_COMPONENT_NAME lm96570_spi_in_0
-#define LM96570_SPI_IN_0_BASE 0x250
-#define LM96570_SPI_IN_0_SPAN 16
-#define LM96570_SPI_IN_0_END 0x25f
-#define LM96570_SPI_IN_0_BIT_CLEARING_EDGE_REGISTER 0
-#define LM96570_SPI_IN_0_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define LM96570_SPI_IN_0_CAPTURE 0
-#define LM96570_SPI_IN_0_DATA_WIDTH 32
-#define LM96570_SPI_IN_0_DO_TEST_BENCH_WIRING 0
-#define LM96570_SPI_IN_0_DRIVEN_SIM_VALUE 0
-#define LM96570_SPI_IN_0_EDGE_TYPE NONE
-#define LM96570_SPI_IN_0_FREQ 50000000
-#define LM96570_SPI_IN_0_HAS_IN 0
-#define LM96570_SPI_IN_0_HAS_OUT 1
-#define LM96570_SPI_IN_0_HAS_TRI 0
-#define LM96570_SPI_IN_0_IRQ_TYPE NONE
-#define LM96570_SPI_IN_0_RESET_VALUE 0
 
 /*
  * Macros for device 'led_pio', class 'altera_avalon_pio'
@@ -1153,7 +961,7 @@
 #define SYSID_QSYS_SPAN 8
 #define SYSID_QSYS_END 0x467
 #define SYSID_QSYS_ID 2899645186
-#define SYSID_QSYS_TIMESTAMP 1539131202
+#define SYSID_QSYS_TIMESTAMP 1552189075
 
 /*
  * Macros for device 'jtag_uart', class 'altera_avalon_jtag_uart'

@@ -515,7 +515,7 @@ set_location_assignment PIN_Y26 -to CLOCK3_50
 #============================================================
 # CLOCK4
 #============================================================
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK4_50
+set_instance_assignment -name IO_STANDARD "1.8 V" -to CLOCK4_50
 set_location_assignment PIN_K14 -to CLOCK4_50
 #============================================================
 # HPS
@@ -1002,26 +1002,26 @@ set_location_assignment PIN_M17 -to HPS_USB_DATA[7]
 set_location_assignment PIN_E14 -to HPS_USB_DIR
 set_location_assignment PIN_A14 -to HPS_USB_NXT
 set_location_assignment PIN_C15 -to HPS_USB_STP
-set_location_assignment PIN_AB27 -to dco_n
-set_location_assignment PIN_AA26 -to dco_p
-set_location_assignment PIN_G13 -to dina_n
-set_location_assignment PIN_H14 -to dina_p
-set_location_assignment PIN_B12 -to dinb_n
-set_location_assignment PIN_C13 -to dinb_p
-set_location_assignment PIN_D12 -to dinc_n
-set_location_assignment PIN_E12 -to dinc_p
-set_location_assignment PIN_B5 -to dind_n
-set_location_assignment PIN_B6 -to dind_p
-set_location_assignment PIN_F8 -to dine_n
-set_location_assignment PIN_F9 -to dine_p
-set_location_assignment PIN_H7 -to dinf_n
-set_location_assignment PIN_J7 -to dinf_p
-set_location_assignment PIN_J9 -to ding_n
-set_location_assignment PIN_J10 -to ding_p
-set_location_assignment PIN_J12 -to dinh_n
-set_location_assignment PIN_K12 -to dinh_p
-set_location_assignment PIN_G15 -to fco_n
-set_location_assignment PIN_H15 -to fco_p
+set_location_assignment PIN_G8 -to dco_n
+set_location_assignment PIN_H8 -to dco_p
+set_location_assignment PIN_B12 -to dina_n
+set_location_assignment PIN_C13 -to dina_p
+set_location_assignment PIN_D12 -to dinb_n
+set_location_assignment PIN_E12 -to dinb_p
+set_location_assignment PIN_B5 -to dinc_n
+set_location_assignment PIN_B6 -to dinc_p
+set_location_assignment PIN_AB27 -to dind_n
+set_location_assignment PIN_AA26 -to dind_p
+set_location_assignment PIN_H7 -to dine_n
+set_location_assignment PIN_J7 -to dine_p
+set_location_assignment PIN_J9 -to dinf_n
+set_location_assignment PIN_J10 -to dinf_p
+set_location_assignment PIN_J12 -to ding_n
+set_location_assignment PIN_K12 -to ding_p
+set_location_assignment PIN_H12 -to dinh_n
+set_location_assignment PIN_H13 -to dinh_p
+set_location_assignment PIN_F8 -to fco_n
+set_location_assignment PIN_F9 -to fco_p
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE10_Standard_golden_top -section_id Top
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE10_Standard_golden_top -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity DE10_Standard_golden_top -section_id Top
@@ -1121,22 +1121,22 @@ set_location_assignment PIN_AJ2 -to MUX_CNT[7]
 set_location_assignment PIN_AH3 -to MUX_CNT[8]
 set_location_assignment PIN_AH5 -to MUX_CNT[9]
 set_location_assignment PIN_AG2 -to MUX_CNT[10]
-set_location_assignment PIN_AG8 -to ADC_AD9276_CSB1
-set_location_assignment PIN_AF4 -to ADC_AD9276_SCLK
-set_location_assignment PIN_AG7 -to ADC_AD9276_SDI
-set_location_assignment PIN_AG5 -to ADC_AD9276_SDO
+set_location_assignment PIN_G13 -to ADC_AD9276_CSB1
+set_location_assignment PIN_H14 -to ADC_AD9276_SCLK
+set_location_assignment PIN_E13 -to ADC_AD9276_SDI
+set_location_assignment PIN_F13 -to ADC_AD9276_SDO
 set_location_assignment PIN_AE12 -to BF_SPI_CS_N
 set_location_assignment PIN_AF10 -to BF_SPI_SCK
 set_location_assignment PIN_AD9 -to BF_SPI_SDI
 set_location_assignment PIN_AE9 -to BF_SPI_SDO
 set_location_assignment PIN_AC9 -to BF_TX_EN_PIN
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_AD9276_CSB1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to ADC_AD9276_CSB1
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_AD9276_CSB2
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_AD9276_CSB3
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_AD9276_CSB4
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_AD9276_SCLK
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_AD9276_SDI
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_AD9276_SDO
+set_instance_assignment -name IO_STANDARD "1.8 V" -to ADC_AD9276_SCLK
+set_instance_assignment -name IO_STANDARD "1.8 V" -to ADC_AD9276_SDI
+set_instance_assignment -name IO_STANDARD "1.8 V" -to ADC_AD9276_SDO
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BF_SPI_CS_N
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BF_SPI_SCK
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BF_SPI_SDI
@@ -1413,5 +1413,9 @@ set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[18] -
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[24] -to adc_test|vcc -section_id adc_test
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[26] -to adc_test|vcc -section_id adc_test
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[30] -to adc_test|gnd -section_id adc_test
+set_instance_assignment -name IO_STANDARD "1.8 V" -to ADC_AD9276_PWDN
+set_instance_assignment -name IO_STANDARD "1.8 V" -to ADC_AD9276_STBY
+set_location_assignment PIN_A11 -to ADC_AD9276_PWDN
+set_location_assignment PIN_A10 -to ADC_AD9276_STBY
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name SLD_FILE db/adc_test_auto_stripped.stp

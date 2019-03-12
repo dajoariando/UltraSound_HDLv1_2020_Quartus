@@ -72,9 +72,7 @@ module ADC_AD9276 (
 	reg fcostb;
 	
 	wire fco;
-
 	wire dco;
-	wire dcoshifted;
 
 	//Altera Implementations of above buffers, Check this again...
 	alt_inbuf_diff IB1 (.i(dco_p), .ibar(dco_n), .o(dco_in));
@@ -89,13 +87,15 @@ module ADC_AD9276 (
 	alt_inbuf_diff IB9 (.i(ding_p), .ibar(ding_n), .o(din_g));
 	alt_inbuf_diff IB10 (.i(dinh_p), .ibar(dinh_n), .o(din_h));
 						 
-	//Altera Implementation of DCO Clk (Previous MegaFunctions: Alt_PLL)
+	/* Altera Implementation of DCO Clk (Previous MegaFunctions: Alt_PLL)
 	pll_adc_datain pll_adc_datain1 (
 		.refclk		(dco_in),      
 		.locked		(dco_locked),
 		.rst		(rst), 
 		.outclk_0	(dco)
 	);
+	*/
+	assign dco = dco_in; // bypass the PLL
 	
 	/*
 	dcm2 DCM2 (
