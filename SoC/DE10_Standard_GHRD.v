@@ -136,7 +136,7 @@ module DE10_Standard_GHRD(
 	input       [3:0]  HPS_ENET_RX_DATA,
 	input              HPS_ENET_RX_DV,
 	output      [3:0]  HPS_ENET_TX_DATA,
-	output             HPS_ENET_LM96570_TX_EN,
+	output             HPS_ENET_TX_EN,
 	inout       [3:0]  HPS_FLASH_DATA,
 	output             HPS_FLASH_DCLK,
 	output             HPS_FLASH_NCSO,
@@ -198,23 +198,63 @@ module DE10_Standard_GHRD(
 	input dinh_p, 
 	input dinh_n,
 	
+	// Transmit output signal
+	output TXD1_p,
+	output TXD2_p,
+	output TXD3_p,
+	output TXD4_p,
+	output TXD5_p,
+	output TXD6_p,
+	output TXD7_p,
+	output TXD8_p,
+	
+	output TXD1_n,
+	output TXD2_n,
+	output TXD3_n,
+	output TXD4_n,
+	output TXD5_n,
+	output TXD6_n,
+	output TXD7_n,
+	output TXD8_n,
+	
+	
 	// spi for AD9276 ADC
 	// output ADC_AD9276_CSB4,
 	// output ADC_AD9276_CSB3,
 	// output ADC_AD9276_CSB2,
-	output ADC_AD9276_CSB1,
-	input ADC_AD9276_SDO,
-	output ADC_AD9276_SDI,
-	output ADC_AD9276_SCLK,
-	output ADC_AD9276_STBY,
-	output ADC_AD9276_PWDN,
-
+	output ADC_AD9276_CSB1, // CSB1_CHA
+	input ADC_AD9276_SDO, // SDO_CHA
+	output ADC_AD9276_SDI, // SDI_CHA
+	output ADC_AD9276_SCLK, // SCLK_CHA
+	output ADC_AD9276_STBY, // STBY
+	output ADC_AD9276_PWDN, // PWDN
+	output ADC_AD9276_4LORESET, // RESET
+	
+	output TX_OE, // output enable for TX input buffer
+	input MAX14808_THP,
+	output MAX_14808_SYNC,
+	output MAX_14808_CLK_p, // CLK
+	output MAX_14808_CLK_n, // CLKB
+	output FPG_CLK, // FPGA optional output clock for the AD9276
+	output LTC2640_CLR_n,
+	output LTC2640_CSLD,
+	output MAX14808_CC0,
+	output MAX14808_CC1,
+	output MAX14808_MODE0,
+	output MAX14808_MODE1,
+	output NEG_5V_EN,
+	output POS_48V_EN,
+	output NEG_48V_EN,
+	output POS_5V_EN,
+	
+	output [9:0] CNTRL
+	
 	// spi for LM96570
 	// input BF_SPI_SDI,
 	// output BF_SPI_SDO,
 	// output BF_SPI_SCK,
 	// output BF_SPI_CS_N,
-	output BF_TX_EN_PIN,
+	// output BF_TX_EN_PIN,
 	// output BF_RESET,
 	
 	// LM96530 TX/RX Switch
@@ -225,11 +265,11 @@ module DE10_Standard_GHRD(
 	// output [10:0] MUX_CNT,
 	
 	// control signals
-	output PULSER_EN,
+	// output PULSER_EN,
 
 	// OTHERS / not used
-	output AD9516_in,
-	output r_RESET
+	// output AD9516_in,
+	// output r_RESET
 );
 
 	parameter DATA_WIDTH = 70;
@@ -264,6 +304,9 @@ module DE10_Standard_GHRD(
 
 	wire [ADC_INIT_DELAY_WIDTH-1:0] 		ADC_INIT_DELAY ;
 	wire [ADC_SAMPLES_PER_ECHO_WIDTH-1:0] ADC_SAMPLES_PER_ECHO  ;
+	
+	reg [ADC_INIT_DELAY_WIDTH-1:0] 		ADC_INIT_DELAY_reg ;
+	reg [ADC_SAMPLES_PER_ECHO_WIDTH-1:0] ADC_SAMPLES_PER_ECHO_reg  ;
   
 	wire [13:0] captured_dataA;
 	wire [13:0] captured_dataB;
@@ -319,7 +362,7 @@ module DE10_Standard_GHRD(
 		.hps_0_hps_io_hps_io_emac1_inst_MDIO   ( HPS_ENET_MDIO ),         //                             .hps_io_emac1_inst_MDIO
 		.hps_0_hps_io_hps_io_emac1_inst_MDC    ( HPS_ENET_MDC  ),         //                             .hps_io_emac1_inst_MDC
 		.hps_0_hps_io_hps_io_emac1_inst_RX_CTL ( HPS_ENET_RX_DV),         //                             .hps_io_emac1_inst_RX_CTL
-		.hps_0_hps_io_hps_io_emac1_inst_TX_CTL ( HPS_ENET_LM96570_TX_EN),         //                             .hps_io_emac1_inst_TX_CTL
+		.hps_0_hps_io_hps_io_emac1_inst_TX_CTL ( HPS_ENET_TX_EN),         //                             .hps_io_emac1_inst_TX_CTL
 		.hps_0_hps_io_hps_io_emac1_inst_RX_CLK ( HPS_ENET_RX_CLK),        //                             .hps_io_emac1_inst_RX_CLK
 		.hps_0_hps_io_hps_io_emac1_inst_RXD1   ( HPS_ENET_RX_DATA[1] ),   //                             .hps_io_emac1_inst_RXD1
 		.hps_0_hps_io_hps_io_emac1_inst_RXD2   ( HPS_ENET_RX_DATA[2] ),   //                             .hps_io_emac1_inst_RXD2
@@ -406,6 +449,17 @@ module DE10_Standard_GHRD(
         .ad9276_spi_external_SS_n              (ADC_AD9276_CSB1), // omit ADC_AD9276_CSB1 in Alex board to make it high-Z
 		
         .general_cnt_out_export                ({
+			NEG_5V_EN,
+		    POS_48V_EN,
+		    NEG_48V_EN,
+		    POS_5V_EN,
+			MAX14808_MODE1,
+			MAX14808_MODE0,
+			MAX14808_CC1,
+			MAX14808_CC0,
+			LTC2640_CLR_n,
+			ADC_AD9276_4LORESET,
+			TX_OE,					// Output enable pin for the TX input buffer
 			ADC_AD9276_PWDN,
 			ADC_AD9276_STBY,
 			FSM_RESET,
@@ -418,6 +472,8 @@ module DE10_Standard_GHRD(
 			BF_SPI_START
 		}),
         .general_cnt_in_export                 ({
+			MAX_14808_SYNC,
+			MAX14808_THP,
 			FSM_DONE,
 			BF_SPI_DONE
 		}),
@@ -465,6 +521,14 @@ module DE10_Standard_GHRD(
 		// .mux_control_export                    (MUX_CNT)                     					//                    MUX_CNT.export
 	
 	);
+	
+	// Clock Domain Crossing!!!
+	always @(posedge ADC_CLKOUT)
+	begin
+		ADC_INIT_DELAY_reg 			<= ADC_INIT_DELAY;
+		ADC_SAMPLES_PER_ECHO_reg 	<= ADC_SAMPLES_PER_ECHO;
+		
+	end
 	
 	
 	// Debounce logic to clean out glitches within 1ms
@@ -620,14 +684,15 @@ module DE10_Standard_GHRD(
 		// Control Signals
 		.START		(BF_TX_EN_PULSED	),  	//Starting of TX Firing and Data Acquisiton
 		.DONE		(FSM_DONE	),				//Notification of Completed Data Acquistion
-		.TX_EN		(BF_TX_EN_PIN	),    		//BF_TX_EN Signal
+		// .TX_EN		(BF_TX_EN_PIN	),    		//BF_TX_EN Signal - not used
+		.TX_EN		(),
 		
 		// timing parameters
 		.ADC_START_length	(ADC_START_length),
 		
 		// ACQ WINDOW
-		.ADC_INIT_DELAY			(ADC_INIT_DELAY),
-		.ADC_SAMPLES_PER_ECHO	(ADC_SAMPLES_PER_ECHO),
+		.ADC_INIT_DELAY			(ADC_INIT_DELAY_reg),
+		.ADC_SAMPLES_PER_ECHO	(ADC_SAMPLES_PER_ECHO_reg),
 		.FIFO_EN				(FIFO_EN),
 		
 		// System Signals
