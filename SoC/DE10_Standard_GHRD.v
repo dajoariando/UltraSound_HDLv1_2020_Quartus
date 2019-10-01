@@ -236,6 +236,7 @@ module DE10_Standard_GHRD(
 	output MAX_14808_CLK_p, // CLK
 	output MAX_14808_CLK_n, // CLKB
 	output FPG_CLK, // FPGA optional output clock for the AD9276
+	output CLK_EN,
 	output LTC2640_CLR_n,
 	output LTC2640_CSLD,
 	output MAX14808_CC0,
@@ -449,6 +450,7 @@ module DE10_Standard_GHRD(
         .ad9276_spi_external_SS_n              (ADC_AD9276_CSB1), // omit ADC_AD9276_CSB1 in Alex board to make it high-Z
 		
         .general_cnt_out_export                ({
+			CLK_EN,
 			NEG_5V_EN,
 		    POS_48V_EN,
 		    NEG_48V_EN,
