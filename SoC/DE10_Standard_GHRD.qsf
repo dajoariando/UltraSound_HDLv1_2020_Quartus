@@ -956,7 +956,6 @@ set_location_assignment PIN_F20 -to HPS_ENET_TX_DATA[0]
 set_location_assignment PIN_J19 -to HPS_ENET_TX_DATA[1]
 set_location_assignment PIN_F21 -to HPS_ENET_TX_DATA[2]
 set_location_assignment PIN_F19 -to HPS_ENET_TX_DATA[3]
-set_location_assignment PIN_A20 -to HPS_ENET_TX_EN
 set_location_assignment PIN_C20 -to HPS_FLASH_DATA[0]
 set_location_assignment PIN_H18 -to HPS_FLASH_DATA[1]
 set_location_assignment PIN_A19 -to HPS_FLASH_DATA[2]
@@ -1002,26 +1001,26 @@ set_location_assignment PIN_M17 -to HPS_USB_DATA[7]
 set_location_assignment PIN_E14 -to HPS_USB_DIR
 set_location_assignment PIN_A14 -to HPS_USB_NXT
 set_location_assignment PIN_C15 -to HPS_USB_STP
-set_location_assignment PIN_F8 -to dco_n
-set_location_assignment PIN_F9 -to dco_p
-set_location_assignment PIN_E13 -to dina_n
-set_location_assignment PIN_F13 -to dina_p
-set_location_assignment PIN_D10 -to dinb_n
-set_location_assignment PIN_D11 -to dinb_p
-set_location_assignment PIN_D9 -to dinc_n
-set_location_assignment PIN_E9 -to dinc_p
-set_location_assignment PIN_E11 -to dind_n
-set_location_assignment PIN_F11 -to dind_p
-set_location_assignment PIN_G8 -to dine_n
-set_location_assignment PIN_H8 -to dine_p
-set_location_assignment PIN_K8 -to dinf_n
-set_location_assignment PIN_K7 -to dinf_p
-set_location_assignment PIN_F10 -to ding_n
-set_location_assignment PIN_G10 -to ding_p
-set_location_assignment PIN_G11 -to dinh_n
-set_location_assignment PIN_G12 -to dinh_p
-set_location_assignment PIN_AB27 -to fco_n
-set_location_assignment PIN_AA26 -to fco_p
+set_location_assignment PIN_G8 -to dco_n
+set_location_assignment PIN_H8 -to dco_p
+set_location_assignment PIN_B12 -to dina_n
+set_location_assignment PIN_C13 -to dina_p
+set_location_assignment PIN_D12 -to dinb_n
+set_location_assignment PIN_E12 -to dinb_p
+set_location_assignment PIN_B5 -to dinc_n
+set_location_assignment PIN_B6 -to dinc_p
+set_location_assignment PIN_AB27 -to dind_n
+set_location_assignment PIN_AA26 -to dind_p
+set_location_assignment PIN_H7 -to dine_n
+set_location_assignment PIN_J7 -to dine_p
+set_location_assignment PIN_J9 -to dinf_n
+set_location_assignment PIN_J10 -to dinf_p
+set_location_assignment PIN_J12 -to ding_n
+set_location_assignment PIN_K12 -to ding_p
+set_location_assignment PIN_H12 -to dinh_n
+set_location_assignment PIN_H13 -to dinh_p
+set_location_assignment PIN_F8 -to fco_n
+set_location_assignment PIN_F9 -to fco_p
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE10_Standard_golden_top -section_id Top
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE10_Standard_golden_top -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity DE10_Standard_golden_top -section_id Top
@@ -1083,9 +1082,7 @@ set_instance_assignment -name IO_STANDARD LVDS -to dinf_p
 set_instance_assignment -name IO_STANDARD LVDS -to ding_p
 set_instance_assignment -name IO_STANDARD LVDS -to dinh_p
 set_instance_assignment -name IO_STANDARD LVDS -to fco_p
-set_location_assignment PIN_AF8 -to PULSER_EN
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PULSER_EN
-set_location_assignment PIN_AD11 -to BF_RESET
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BF_RESET
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to "ADC_AD9276:U1|clkout" -section_id adc_test
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[2] -to adc_test|gnd -section_id adc_test
@@ -1108,28 +1105,10 @@ set_global_assignment -name VERILOG_FILE ip/edge_detect/altera_edge_detector.v
 set_global_assignment -name VERILOG_FILE ip/intr_capturer/intr_capturer.v
 set_global_assignment -name QIP_FILE soc_system/synthesis/soc_system.qip
 set_global_assignment -name SIGNALTAP_FILE adc_test.stp
-set_location_assignment PIN_AC12 -to TXRX_SW_OFF
-set_location_assignment PIN_AA12 -to TXRX_SPI_EN
-set_location_assignment PIN_W15 -to MUX_CNT[0]
-set_location_assignment PIN_Y16 -to MUX_CNT[1]
-set_location_assignment PIN_AJ1 -to MUX_CNT[2]
-set_location_assignment PIN_AH2 -to MUX_CNT[3]
-set_location_assignment PIN_AH4 -to MUX_CNT[4]
-set_location_assignment PIN_AK2 -to MUX_CNT[5]
-set_location_assignment PIN_AK3 -to MUX_CNT[6]
-set_location_assignment PIN_AJ2 -to MUX_CNT[7]
-set_location_assignment PIN_AH3 -to MUX_CNT[8]
-set_location_assignment PIN_AH5 -to MUX_CNT[9]
-set_location_assignment PIN_AG2 -to MUX_CNT[10]
 set_location_assignment PIN_G13 -to ADC_AD9276_CSB1
 set_location_assignment PIN_H14 -to ADC_AD9276_SCLK
-set_location_assignment PIN_B12 -to ADC_AD9276_SDI
-set_location_assignment PIN_C13 -to ADC_AD9276_SDO
-set_location_assignment PIN_AE12 -to BF_SPI_CS_N
-set_location_assignment PIN_AF10 -to BF_SPI_SCK
-set_location_assignment PIN_AD9 -to BF_SPI_SDI
-set_location_assignment PIN_AE9 -to BF_SPI_SDO
-set_location_assignment PIN_AC9 -to BF_TX_EN_PIN
+set_location_assignment PIN_E13 -to ADC_AD9276_SDI
+set_location_assignment PIN_F13 -to ADC_AD9276_SDO
 set_instance_assignment -name IO_STANDARD "2.5 V" -to ADC_AD9276_CSB1
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_AD9276_CSB2
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_AD9276_CSB3
@@ -1415,34 +1394,8 @@ set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[26] -
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[30] -to adc_test|gnd -section_id adc_test
 set_instance_assignment -name IO_STANDARD "2.5 V" -to ADC_AD9276_PWDN
 set_instance_assignment -name IO_STANDARD "2.5 V" -to ADC_AD9276_STBY
-set_location_assignment PIN_B6 -to ADC_AD9276_PWDN
-set_location_assignment PIN_B5 -to ADC_AD9276_STBY
-set_location_assignment PIN_H7 -to ADC_AD9276_4LORESET
-set_location_assignment PIN_C7 -to CNTRL[9]
-set_location_assignment PIN_B7 -to CNTRL[8]
-set_location_assignment PIN_C8 -to CNTRL[7]
-set_location_assignment PIN_B8 -to CNTRL[6]
-set_location_assignment PIN_C12 -to CNTRL[5]
-set_location_assignment PIN_B11 -to CNTRL[4]
-set_location_assignment PIN_B13 -to CNTRL[3]
-set_location_assignment PIN_A13 -to CNTRL[2]
-set_location_assignment PIN_A11 -to CNTRL[1]
-set_location_assignment PIN_A10 -to CNTRL[0]
-set_location_assignment PIN_E12 -to FPG_CLK
-set_location_assignment PIN_F15 -to LTC2640_CLR_n
-set_location_assignment PIN_F14 -to LTC2640_CSLD
-set_location_assignment PIN_E4 -to MAX14808_CC0
-set_location_assignment PIN_D4 -to MAX14808_CC1
-set_location_assignment PIN_C3 -to MAX14808_MODE0
-set_location_assignment PIN_B3 -to MAX14808_MODE1
-set_location_assignment PIN_J12 -to MAX14808_THP
-set_location_assignment PIN_J7 -to MAX_14808_CLK_n
-set_location_assignment PIN_J9 -to MAX_14808_CLK_p
-set_location_assignment PIN_J10 -to MAX_14808_SYNC
-set_location_assignment PIN_A4 -to NEG_5V_EN
-set_location_assignment PIN_A6 -to NEG_48V_EN
-set_location_assignment PIN_A5 -to POS_5V_EN
-set_location_assignment PIN_A3 -to POS_48V_EN
+set_location_assignment PIN_A11 -to ADC_AD9276_PWDN
+set_location_assignment PIN_A10 -to ADC_AD9276_STBY
 set_instance_assignment -name IO_STANDARD "2.5 V" -to TXD1_n
 set_instance_assignment -name IO_STANDARD "2.5 V" -to TXD2_n
 set_instance_assignment -name IO_STANDARD "2.5 V" -to TXD3_n
@@ -1454,7 +1407,6 @@ set_instance_assignment -name IO_STANDARD "2.5 V" -to TXD6_p
 set_instance_assignment -name IO_STANDARD "2.5 V" -to TXD7_n
 set_instance_assignment -name IO_STANDARD "2.5 V" -to TXD7_p
 set_instance_assignment -name IO_STANDARD "2.5 V" -to TXD8_n
-set_location_assignment PIN_K12 -to TX_OE
 set_instance_assignment -name IO_STANDARD "2.5 V" -to TXD1_p
 set_instance_assignment -name IO_STANDARD "2.5 V" -to LTC2640_CLR_n
 set_instance_assignment -name IO_STANDARD "2.5 V" -to LTC2640_CSLD
@@ -1490,6 +1442,6 @@ set_instance_assignment -name IO_STANDARD "2.5 V" -to TXD5_p
 set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
 set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
 set_global_assignment -name OPTIMIZATION_MODE "AGGRESSIVE PERFORMANCE"
-set_location_assignment PIN_D12 -to CLK_EN
+set_location_assignment PIN_E9 -to CLK_EN
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name SLD_FILE db/adc_test_auto_stripped.stp
