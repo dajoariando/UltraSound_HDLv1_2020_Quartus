@@ -248,7 +248,7 @@ module DE10_Standard_GHRD(
 	output NEG_48V_EN,
 	output POS_5V_EN,
 	
-	output [9:0] CNTRL
+	output [9:0] CNTRL,
 	
 	// spi for LM96570
 	// input BF_SPI_SDI,

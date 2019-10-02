@@ -10,7 +10,8 @@ NoSoC/simulation
 
 SoC/db
 SoC/incremental_db
-SoC/output_files
+SoC/output_files/*
+!SoC/output_files/DE10_Standard_GHRD.sof
 SoC/*.bak
 SoC/*log
 SoC/.qsys_edit
