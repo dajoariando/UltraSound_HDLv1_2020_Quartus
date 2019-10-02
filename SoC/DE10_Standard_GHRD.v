@@ -255,7 +255,7 @@ module DE10_Standard_GHRD(
 	// output BF_SPI_SDO,
 	// output BF_SPI_SCK,
 	// output BF_SPI_CS_N,
-	// output BF_TX_EN_PIN,
+	output BF_TX_EN_PIN,
 	// output BF_RESET,
 	
 	// LM96530 TX/RX Switch
@@ -266,11 +266,11 @@ module DE10_Standard_GHRD(
 	// output [10:0] MUX_CNT,
 	
 	// control signals
-	// output PULSER_EN,
+	output PULSER_EN,
 
 	// OTHERS / not used
-	// output AD9516_in,
-	// output r_RESET
+	output AD9516_in,
+	output r_RESET
 );
 
 	parameter DATA_WIDTH = 70;
@@ -686,15 +686,16 @@ module DE10_Standard_GHRD(
 		// Control Signals
 		.START		(BF_TX_EN_PULSED	),  	//Starting of TX Firing and Data Acquisiton
 		.DONE		(FSM_DONE	),				//Notification of Completed Data Acquistion
-		// .TX_EN		(BF_TX_EN_PIN	),    		//BF_TX_EN Signal - not used
-		.TX_EN		(),
+		.TX_EN		(BF_TX_EN_PIN	),    		//BF_TX_EN Signal - not used
 		
 		// timing parameters
 		.ADC_START_length	(ADC_START_length),
 		
 		// ACQ WINDOW
-		.ADC_INIT_DELAY			(ADC_INIT_DELAY_reg),
-		.ADC_SAMPLES_PER_ECHO	(ADC_SAMPLES_PER_ECHO_reg),
+		.ADC_INIT_DELAY			(ADC_INIT_DELAY),
+		.ADC_SAMPLES_PER_ECHO	(ADC_SAMPLES_PER_ECHO),
+		// .ADC_INIT_DELAY			(ADC_INIT_DELAY_reg),
+		// .ADC_SAMPLES_PER_ECHO	(ADC_SAMPLES_PER_ECHO_reg),
 		.FIFO_EN				(FIFO_EN),
 		
 		// System Signals
