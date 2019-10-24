@@ -20,3 +20,5 @@ SoC/greybox_tmp
 SoC/hps_isw_handoff
 SoC/soc_system
 SoC/*.sopcinfo
+
+*.orig
