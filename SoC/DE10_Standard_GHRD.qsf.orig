@@ -956,7 +956,6 @@ set_location_assignment PIN_F20 -to HPS_ENET_TX_DATA[0]
 set_location_assignment PIN_J19 -to HPS_ENET_TX_DATA[1]
 set_location_assignment PIN_F21 -to HPS_ENET_TX_DATA[2]
 set_location_assignment PIN_F19 -to HPS_ENET_TX_DATA[3]
-set_location_assignment PIN_A20 -to HPS_ENET_TX_EN
 set_location_assignment PIN_C20 -to HPS_FLASH_DATA[0]
 set_location_assignment PIN_H18 -to HPS_FLASH_DATA[1]
 set_location_assignment PIN_A19 -to HPS_FLASH_DATA[2]
@@ -1397,6 +1396,7 @@ set_instance_assignment -name IO_STANDARD "2.5 V" -to ADC_AD9276_PWDN
 set_instance_assignment -name IO_STANDARD "2.5 V" -to ADC_AD9276_STBY
 set_location_assignment PIN_A11 -to ADC_AD9276_PWDN
 set_location_assignment PIN_A10 -to ADC_AD9276_STBY
+<<<<<<< HEAD
 set_instance_assignment -name IO_STANDARD "2.5 V" -to TXD1_n
 set_instance_assignment -name IO_STANDARD "2.5 V" -to TXD2_n
 set_instance_assignment -name IO_STANDARD "2.5 V" -to TXD3_n
@@ -1444,5 +1444,7 @@ set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
 set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
 set_global_assignment -name OPTIMIZATION_MODE "AGGRESSIVE PERFORMANCE"
 set_location_assignment PIN_E9 -to CLK_EN
+=======
+>>>>>>> compiled and track the *.sof file into git
 set_global_assignment -name SLD_FILE db/adc_test_auto_stripped.stp
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
