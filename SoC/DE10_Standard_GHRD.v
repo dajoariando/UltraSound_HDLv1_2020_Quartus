@@ -85,7 +85,7 @@ module DE10_Standard_GHRD(
 	inout              FPGA_I2C_SDAT,
 
 	///////// GPIO /////////
-	// inout    [35: 0]   GPIO,
+	inout    [35: 0]   GPIO,
 
 	/*
 `ifdef ENABLE_HSMC
@@ -219,23 +219,21 @@ module DE10_Standard_GHRD(
 	
 	
 	// spi for AD9276 ADC
-	// output ADC_AD9276_CSB4,
-	// output ADC_AD9276_CSB3,
-	// output ADC_AD9276_CSB2,
-	output ADC_AD9276_CSB1, // CSB1_CHA
-	input ADC_AD9276_SDO, // SDO_CHA
-	output ADC_AD9276_SDI, // SDI_CHA
-	output ADC_AD9276_SCLK, // SCLK_CHA
-	output ADC_AD9276_STBY, // STBY
-	output ADC_AD9276_PWDN, // PWDN
+	output ADC_AD9276_CSB1,		// CSB1_CHA
+	input ADC_AD9276_SDO,		// SDO_CHA
+	output ADC_AD9276_SDI,		// SDI_CHA
+	output ADC_AD9276_SCLK,		// SCLK_CHA
+	output ADC_AD9276_STBY,		// STBY
+	output ADC_AD9276_PWDN,		// PWDN
 	output ADC_AD9276_4LORESET, // RESET
 	
-	output TX_OE, // output enable for TX input buffer
+	
+	output TX_OE,				// output enable for TX input buffer
 	input MAX14808_THP,
 	output MAX_14808_SYNC,
-	output MAX_14808_CLK_p, // CLK
-	output MAX_14808_CLK_n, // CLKB
-	output FPG_CLK, // FPGA optional output clock for the AD9276
+	output MAX_14808_CLK_p,		// CLK
+	output MAX_14808_CLK_n,		// CLKB
+	output FPG_CLK,				// FPGA optional output clock for the AD9276
 	output CLK_EN,
 	output LTC2640_CLR_n,
 	output LTC2640_CSLD,
@@ -248,49 +246,31 @@ module DE10_Standard_GHRD(
 	output NEG_48V_EN,
 	output POS_5V_EN,
 	
-	output [9:0] CNTRL,
-	
-	// spi for LM96570
-	// input BF_SPI_SDI,
-	// output BF_SPI_SDO,
-	// output BF_SPI_SCK,
-	// output BF_SPI_CS_N,
-	output BF_TX_EN_PIN,
-	// output BF_RESET,
-	
-	// LM96530 TX/RX Switch
-	// output TXRX_SPI_EN,		
-	// output TXRX_SW_OFF,			
+	output [10:1] CNTRL
 
-	//control pins for Mux board
-	// output [10:0] MUX_CNT,
-	
-	// control signals
-	output PULSER_EN,
-
-	// OTHERS / not used
-	output AD9516_in,
-	output r_RESET
 );
 
-	parameter DATA_WIDTH = 70;
-	parameter BIT_COUNT_WIDTH = 8; // to accomodate shifting 70 bits of data
-	wire [DATA_WIDTH-1:0] DATA_IN;
-	wire [BIT_COUNT_WIDTH-1:0] NUM_OF_BIT;
-	wire [DATA_WIDTH-1:0] RD_DATA;
-	wire PLLOUT;
-	wire [9:0] ISSP_CNT;
-
+	parameter ADC_SAMPLES_PER_ECHO_WIDTH = 32;
+	parameter ADC_INIT_DELAY_WIDTH = 32;
+	parameter REG_LEN = 8;
+	
+	// mux control
+	wire MUX_LE;
+	wire MUX_SET;
+	wire MUX_CLR;
+	
 	// control signals from HPC
-	wire BF_SPI_START;
-	wire BF_SPI_RESET;
 	wire BF_TX_EN;
 	wire FIFO_EN;
 	wire [31:0] ADC_START_length;
-	parameter ADC_SAMPLES_PER_ECHO_WIDTH = 32;
-	parameter ADC_INIT_DELAY_WIDTH = 32;
-
-
+	
+	// control for pulse
+	wire [REG_LEN-1:0] pulse_init_delay;
+	wire [REG_LEN-1:0] pulse_tx_len;   
+	wire [REG_LEN-1:0] pulse_damp_len;
+	wire pulse_start;
+	reg pulse_start_reg;
+	
 	wire  hps_fpga_reset_n;
 	wire [3:0] fpga_debounced_buttons;
 	wire [8:0]  fpga_led_internal;
@@ -300,14 +280,19 @@ module DE10_Standard_GHRD(
 	wire        hps_debug_reset;
 	wire [27:0] stm_hw_events;
 	wire        fpga_clk_50;
-	assign fpga_clk_50=CLOCK_50;
+	assign fpga_clk_50 = CLOCK_50;
+	wire pulse_pll_out_clk;
+	wire pulse_pll_locked;
 
 
-	wire [ADC_INIT_DELAY_WIDTH-1:0] 		ADC_INIT_DELAY ;
-	wire [ADC_SAMPLES_PER_ECHO_WIDTH-1:0] ADC_SAMPLES_PER_ECHO  ;
+	wire [ADC_INIT_DELAY_WIDTH-1:0]			ADC_INIT_DELAY ;
+	wire [ADC_SAMPLES_PER_ECHO_WIDTH-1:0]	ADC_SAMPLES_PER_ECHO  ;
 	
-	reg [ADC_INIT_DELAY_WIDTH-1:0] 		ADC_INIT_DELAY_reg ;
-	reg [ADC_SAMPLES_PER_ECHO_WIDTH-1:0] ADC_SAMPLES_PER_ECHO_reg  ;
+	reg [ADC_INIT_DELAY_WIDTH-1:0] 			ADC_INIT_DELAY_reg ;
+	reg [ADC_SAMPLES_PER_ECHO_WIDTH-1:0]	ADC_SAMPLES_PER_ECHO_reg  ;
+	reg [REG_LEN-1:0]						pulse_init_delay_reg;
+	reg [REG_LEN-1:0]						pulse_tx_len_reg;
+	reg [REG_LEN-1:0]						pulse_damp_len_reg;
   
 	wire [13:0] captured_dataA;
 	wire [13:0] captured_dataB;
@@ -435,14 +420,6 @@ module DE10_Standard_GHRD(
 		.hps_0_f2h_debug_reset_req_reset_n     (~hps_debug_reset ),     //      hps_0_f2h_debug_reset_req.reset_n
 		.hps_0_f2h_stm_hw_events_stm_hwevents  (stm_hw_events ),  //        hps_0_f2h_stm_hw_events.stm_hwevents
 		.hps_0_f2h_warm_reset_req_reset_n      (~hps_warm_reset ),      //       hps_0_f2h_warm_reset_req.reset_n
-				
-		// .lm96570_spi_in_2_export               (DATA_IN[69:64]),
-        // .lm96570_spi_in_1_export               (DATA_IN[63:32]),
-        // .lm96570_spi_in_0_export               (DATA_IN[31:0]),
-		// .lm96570_spi_num_of_bits_export        (NUM_OF_BIT),
-        // .lm96570_spi_out_2_export              (RD_DATA[69:64]),
-        // .lm96570_spi_out_1_export              (RD_DATA[63:32]),
-        // .lm96570_spi_out_0_export              (RD_DATA[31:0]),
 		
         .ad9276_spi_external_MISO              (ADC_AD9276_SDO),
         .ad9276_spi_external_MOSI              (ADC_AD9276_SDI),
@@ -450,6 +427,11 @@ module DE10_Standard_GHRD(
         .ad9276_spi_external_SS_n              (ADC_AD9276_CSB1), // omit ADC_AD9276_CSB1 in Alex board to make it high-Z
 		
         .general_cnt_out_export                ({
+			MUX_LE,
+			MUX_SET,
+			MUX_CLR,
+			MAX_14808_SYNC,
+			pulse_start,
 			CLK_EN,
 			NEG_5V_EN,
 		    POS_48V_EN,
@@ -465,21 +447,14 @@ module DE10_Standard_GHRD(
 			ADC_AD9276_PWDN,
 			ADC_AD9276_STBY,
 			FSM_RESET,
-			TXRX_SW_OFF,
-			TXRX_SPI_EN,
-			PULSER_EN,
-			BF_RESET,
-			BF_TX_EN,
-			BF_SPI_RESET,
-			BF_SPI_START
+			BF_TX_EN
 		}),
         .general_cnt_in_export                 ({
-			MAX_14808_SYNC,
+			pulse_pll_locked,
 			MAX14808_THP,
 			FSM_DONE,
 			BF_SPI_DONE
 		}),
-        // .lm96570_spi_pll_outclk0_clk           (BF_CLK_2MHZ),
 		
 		.fifo_sink_clk_in_clk                  (ADC_CLKOUT),                   				//   fifo_sink_clk_in.clk
 		
@@ -519,9 +494,17 @@ module DE10_Standard_GHRD(
         .adc_samples_per_echo_export           (ADC_SAMPLES_PER_ECHO),            			//           adc_samples_per_echo.export
 	
 		.adc_start_pulselength_export          (ADC_START_length),          					//          adc_start_pulselength.export
+				
+		.pulse_init_delay_export               (pulse_init_delay),               //               pulse_init_delay.export
+        .pulse_tx_len_export                   (pulse_tx_len   ),                   //                   pulse_tx_len.export
+        .pulse_damp_len_export                 (pulse_damp_len),                 //                 pulse_damp_len.export
+        .pulse_pll_out_clk                     (pulse_pll_out_clk),                     //                  pulse_pll_out.clk
+        .pulse_pll_locked_export               (pulse_pll_locked),                //               pulse_pll_locked.export
 		
-		// .mux_control_export                    (MUX_CNT)                     					//                    MUX_CNT.export
-	
+		.mux_spi_MISO                          (),
+        .mux_spi_MOSI                          (CNTRL[7]),
+        .mux_spi_SCLK                          (CNTRL[6]),
+        .mux_spi_SS_n                          ()
 	);
 	
 	// Clock Domain Crossing!!!
@@ -529,7 +512,6 @@ module DE10_Standard_GHRD(
 	begin
 		ADC_INIT_DELAY_reg 			<= ADC_INIT_DELAY;
 		ADC_SAMPLES_PER_ECHO_reg 	<= ADC_SAMPLES_PER_ECHO;
-		
 	end
 	
 	
@@ -608,55 +590,6 @@ module DE10_Standard_GHRD(
 		.fco_locked		(fco_locked)
 	);
 	
-	/*
-	// SPI for the beamformer LM96570
-	GNRL_delayed_pulser
-	#(
-		.DELAY_WIDTH (32)
-	)
-	lm96570_start_pulser
-	(
-		// signals
-		.SIG_IN (BF_SPI_START),
-		.SIG_OUT (BF_SPI_START_PULSED),
-		
-		// parameters
-		.DELAY (10),
-		
-		// system
-		.CLK (BF_CLK_2MHZ),
-		.RESET (BF_SPI_RESET)
-	);
-	LM96570_SPI
-	#(
-		.DATA_WIDTH			(DATA_WIDTH),
-		.BIT_COUNT_WIDTH	(BIT_COUNT_WIDTH)
-	)
-	SPI_01  
-	(
-		// Control Signals
-		.START				(BF_SPI_START_PULSED),
-		.DONE				(BF_SPI_DONE),
-		
-		// Data Signals
-		.RD_DATA			(RD_DATA),
-		
-		// SPI output signals
-		.NUM_OF_BIT			(NUM_OF_BIT),	// number of bits being shifted
-		.DATA_IN			(DATA_IN),
-		
-		// SPI Bus Signals
-		.SPI_CS_N			(BF_SPI_CS_N),
-		.SPI_SCK			(BF_SPI_SCK),
-		.SPI_SDI			(BF_SPI_SDI),
-		.SPI_SDO			(BF_SPI_SDO),
-		
-		// System Signals
-		.CLK				(BF_CLK_2MHZ),
-		.RESET				(BF_SPI_RESET)
-	);
-	*/
-
 	// The FSM for the ultrasound
 	GNRL_delayed_pulser
 	#(
@@ -684,27 +617,70 @@ module DE10_Standard_GHRD(
 	Ultrasound_FSM1
 	(
 		// Control Signals
-		.START		(BF_TX_EN_PULSED	),  	//Starting of TX Firing and Data Acquisiton
-		.DONE		(FSM_DONE	),				//Notification of Completed Data Acquistion
-		.TX_EN		(BF_TX_EN_PIN	),    		//BF_TX_EN Signal - not used
+		.START		(BF_TX_EN_PULSED),  	//Starting of TX Firing and Data Acquisiton
+		.DONE		(FSM_DONE),				//Notification of Completed Data Acquistion
+		//.TX_EN	(BF_TX_EN_PIN),    		//BF_TX_EN Signal - not used
+		.TX_EN		(),    					//BF_TX_EN Signal - not used
 		
 		// timing parameters
 		.ADC_START_length	(ADC_START_length),
 		
 		// ACQ WINDOW
-		.ADC_INIT_DELAY			(ADC_INIT_DELAY),
-		.ADC_SAMPLES_PER_ECHO	(ADC_SAMPLES_PER_ECHO),
+		.ADC_INIT_DELAY				(ADC_INIT_DELAY),
+		.ADC_SAMPLES_PER_ECHO		(ADC_SAMPLES_PER_ECHO),
 		// .ADC_INIT_DELAY			(ADC_INIT_DELAY_reg),
 		// .ADC_SAMPLES_PER_ECHO	(ADC_SAMPLES_PER_ECHO_reg),
-		.FIFO_EN				(FIFO_EN),
+		.FIFO_EN					(FIFO_EN),
 		
 		// System Signals
 		.CLK	(ADC_CLKOUT),
 		.RESET	(FSM_RESET)
 	);
 	
-	// assign ADC_AD9276_STBY = SW[0];
-	// assign ADC_AD9276_PWDN = SW[1];
+	// Clock Domain Crossing!!!
+	always @(posedge pulse_pll_out_clk)
+	begin
+		pulse_init_delay_reg 	<= pulse_init_delay;
+		pulse_tx_len_reg 		<= pulse_tx_len;
+		pulse_damp_len_reg		<= pulse_damp_len;
+		pulse_start_reg			<= pulse_start;
+	end
+	
+	TX_Switch uut (
+		.CLK		(pulse_pll_out_clk),			
+		.RESET		(FSM_RESET),
+		.START		(pulse_start_reg),		
+		
+		.init_delay (pulse_init_delay_reg),
+		.tx_len 	(pulse_tx_len_reg),
+		.damp_len 	(pulse_damp_len_reg),
+		
+		.TXP ({
+			TXD8_p,
+			TXD7_p,
+			TXD6_p,
+			TXD5_p,
+			TXD4_p,
+			TXD3_p,
+			TXD2_p,
+			TXD1_p
+		}),
+		
+		.TXN ({
+			TXD8_n,
+			TXD7_n,
+			TXD6_n,
+			TXD5_n,
+			TXD4_n,
+			TXD3_n,
+			TXD2_n,
+			TXD1_n
+		})
+	);
+	
+	assign CNTRL[8] = MUX_LE;
+	assign CNTRL[5] = MUX_SET;
+	assign CNTRL[4] = MUX_CLR;
 	
 endmodule
 

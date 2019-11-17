@@ -26,15 +26,15 @@ module Ultrasound_FSM
 	//
 	reg [8:0] State;
 	localparam [8:0]
-	S0 = 8'b000000001,  	//State Machine Initialization
-	S1 = 8'b000000010,  	//State Machine Counter Zeroing
-	S2 = 8'b000000100,		//State Machine TX_EN & RX_EN High
-	S3 = 8'b000001000,  	//State Machine TX_EN & RX_EN Low
-	S4 = 8'b000010000,
-	S5 = 8'b000100000,
-	S6 = 8'b001000000,
-	S7 = 8'b010000000,
-	S8 = 8'b100000000;
+	S0 = 9'b000000001,  	//State Machine Initialization
+	S1 = 9'b000000010,  	//State Machine Counter Zeroing
+	S2 = 9'b000000100,		//State Machine TX_EN & RX_EN High
+	S3 = 9'b000001000,  	//State Machine TX_EN & RX_EN Low
+	S4 = 9'b000010000,
+	S5 = 9'b000100000,
+	S6 = 9'b001000000,
+	S7 = 9'b010000000,
+	S8 = 9'b100000000;
 	
 	reg [31:0] counter;
 	reg ADC_START;

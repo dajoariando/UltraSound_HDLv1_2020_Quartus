@@ -13,8 +13,13 @@
    {
       datum _sortIndex
       {
-         value = "40";
+         value = "32";
          type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
       }
    }
    element ADC_INIT_DELAY.s1
@@ -34,8 +39,13 @@
    {
       datum _sortIndex
       {
-         value = "41";
+         value = "33";
          type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
       }
    }
    element ADC_SAMPLES_PER_ECHO.s1
@@ -55,8 +65,13 @@
    {
       datum _sortIndex
       {
-         value = "42";
+         value = "34";
          type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
       }
    }
    element ADC_START_pulselength.s1
@@ -79,6 +94,11 @@
          value = "11";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element ILC.avalon_slave
    {
@@ -99,6 +119,11 @@
       {
          value = "29";
          type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "1";
+         type = "boolean";
       }
    }
    element ad9276_spi.spi_control_port
@@ -121,6 +146,11 @@
          value = "9";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element button_pio.s1
    {
@@ -142,6 +172,11 @@
          value = "0";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element dipsw_pio
    {
@@ -149,6 +184,11 @@
       {
          value = "8";
          type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
       }
    }
    element dipsw_pio.external_connection
@@ -179,6 +219,11 @@
          value = "6";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element fifo_clk_bridge
    {
@@ -187,6 +232,11 @@
          value = "12";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element fifo_sink_CH_A
    {
@@ -194,6 +244,11 @@
       {
          value = "13";
          type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
       }
    }
    element fifo_sink_CH_A.in_csr
@@ -242,28 +297,48 @@
          value = "15";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element fifo_sink_CH_B.in_csr
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
-         value = "1056";
+         value = "1184";
          type = "String";
       }
    }
    element fifo_sink_CH_B.out
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
-         value = "1112";
+         value = "1288";
          type = "String";
       }
    }
    element fifo_sink_CH_B.out_csr
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
-         value = "1024";
+         value = "704";
          type = "String";
       }
    }
@@ -274,28 +349,48 @@
          value = "17";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element fifo_sink_CH_C.in_csr
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
-         value = "960";
+         value = "1152";
          type = "String";
       }
    }
    element fifo_sink_CH_C.out
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
-         value = "1104";
+         value = "1280";
          type = "String";
       }
    }
    element fifo_sink_CH_C.out_csr
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
-         value = "992";
+         value = "672";
          type = "String";
       }
    }
@@ -306,28 +401,48 @@
          value = "19";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element fifo_sink_CH_D.in_csr
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
-         value = "896";
+         value = "1120";
          type = "String";
       }
    }
    element fifo_sink_CH_D.out
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
-         value = "1096";
+         value = "1272";
          type = "String";
       }
    }
    element fifo_sink_CH_D.out_csr
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
-         value = "928";
+         value = "576";
          type = "String";
       }
    }
@@ -338,28 +453,48 @@
          value = "21";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element fifo_sink_CH_E.in_csr
    {
-      datum baseAddress
+      datum _lockedAddress
       {
-         value = "832";
-         type = "String";
+         value = "1";
+         type = "boolean";
       }
-   }
-   element fifo_sink_CH_E.out
-   {
       datum baseAddress
       {
          value = "1088";
          type = "String";
       }
    }
-   element fifo_sink_CH_E.out_csr
+   element fifo_sink_CH_E.out
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
-         value = "864";
+         value = "1264";
+         type = "String";
+      }
+   }
+   element fifo_sink_CH_E.out_csr
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "544";
          type = "String";
       }
    }
@@ -370,28 +505,48 @@
          value = "23";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element fifo_sink_CH_F.in_csr
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
-         value = "800";
+         value = "1056";
          type = "String";
       }
    }
    element fifo_sink_CH_F.out
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
-         value = "664";
+         value = "1256";
          type = "String";
       }
    }
    element fifo_sink_CH_F.out_csr
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
-         value = "768";
+         value = "512";
          type = "String";
       }
    }
@@ -402,28 +557,48 @@
          value = "25";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element fifo_sink_CH_G.in_csr
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
-         value = "704";
+         value = "1024";
          type = "String";
       }
    }
    element fifo_sink_CH_G.out
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
-         value = "408";
+         value = "1248";
          type = "String";
       }
    }
    element fifo_sink_CH_G.out_csr
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
-         value = "736";
+         value = "384";
          type = "String";
       }
    }
@@ -434,28 +609,48 @@
          value = "27";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element fifo_sink_CH_H.in_csr
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
-         value = "352";
+         value = "736";
          type = "String";
       }
    }
    element fifo_sink_CH_H.out
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
-         value = "400";
+         value = "664";
          type = "String";
       }
    }
    element fifo_sink_CH_H.out_csr
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
-         value = "672";
+         value = "352";
          type = "String";
       }
    }
@@ -466,6 +661,11 @@
          value = "14";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element fifo_sink_st_CH_B
    {
@@ -473,6 +673,11 @@
       {
          value = "16";
          type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
       }
    }
    element fifo_sink_st_CH_C
@@ -482,6 +687,11 @@
          value = "18";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element fifo_sink_st_CH_D
    {
@@ -489,6 +699,11 @@
       {
          value = "20";
          type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
       }
    }
    element fifo_sink_st_CH_E
@@ -498,6 +713,11 @@
          value = "22";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element fifo_sink_st_CH_F
    {
@@ -505,6 +725,11 @@
       {
          value = "24";
          type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
       }
    }
    element fifo_sink_st_CH_G
@@ -514,6 +739,11 @@
          value = "26";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element fifo_sink_st_CH_H
    {
@@ -521,6 +751,11 @@
       {
          value = "28";
          type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
       }
    }
    element fpga_only_master
@@ -530,13 +765,23 @@
          value = "5";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element general_cnt_in
    {
       datum _sortIndex
       {
-         value = "37";
+         value = "31";
          type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
       }
    }
    element general_cnt_in.s1
@@ -556,8 +801,13 @@
    {
       datum _sortIndex
       {
-         value = "36";
+         value = "30";
          type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
       }
    }
    element general_cnt_out.s1
@@ -580,9 +830,19 @@
          value = "1";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "1";
+         type = "boolean";
+      }
    }
    element hps_0.f2h_axi_slave
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "0";
@@ -591,6 +851,11 @@
    }
    element hps_0.f2h_sdram0_data
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "0";
@@ -604,6 +869,11 @@
          value = "4";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element jtag_uart
    {
@@ -611,6 +881,11 @@
       {
          value = "10";
          type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
       }
    }
    element jtag_uart.avalon_jtag_slave
@@ -633,6 +908,11 @@
          value = "7";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element led_pio.s1
    {
@@ -647,15 +927,20 @@
          type = "String";
       }
    }
-   element lm96570_spi_in_0
+   element mm_bridge_0
    {
       datum _sortIndex
       {
-         value = "30";
+         value = "2";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "1";
+         type = "boolean";
+      }
    }
-   element lm96570_spi_in_0.s1
+   element mm_bridge_0.s0
    {
       datum _lockedAddress
       {
@@ -664,61 +949,40 @@
       }
       datum baseAddress
       {
-         value = "592";
+         value = "0";
          type = "String";
       }
    }
-   element lm96570_spi_in_1
+   element mux_spi
    {
       datum _sortIndex
       {
-         value = "31";
+         value = "40";
          type = "int";
       }
    }
-   element lm96570_spi_in_1.s1
+   element mux_spi.spi_control_port
    {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
       datum baseAddress
       {
-         value = "576";
+         value = "1312";
          type = "String";
       }
    }
-   element lm96570_spi_in_2
+   element pulse_damp_len
    {
       datum _sortIndex
       {
-         value = "32";
+         value = "37";
          type = "int";
       }
-   }
-   element lm96570_spi_in_2.s1
-   {
-      datum _lockedAddress
+      datum sopceditor_expanded
       {
-         value = "1";
+         value = "0";
          type = "boolean";
       }
-      datum baseAddress
-      {
-         value = "560";
-         type = "String";
-      }
    }
-   element lm96570_spi_num_of_bits
-   {
-      datum _sortIndex
-      {
-         value = "39";
-         type = "int";
-      }
-   }
-   element lm96570_spi_num_of_bits.s1
+   element pulse_damp_len.s1
    {
       datum _lockedAddress
       {
@@ -731,57 +995,20 @@
          type = "String";
       }
    }
-   element lm96570_spi_out_0
-   {
-      datum _sortIndex
-      {
-         value = "33";
-         type = "int";
-      }
-   }
-   element lm96570_spi_out_0.s1
-   {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
-      datum baseAddress
-      {
-         value = "544";
-         type = "String";
-      }
-   }
-   element lm96570_spi_out_1
-   {
-      datum _sortIndex
-      {
-         value = "34";
-         type = "int";
-      }
-   }
-   element lm96570_spi_out_1.s1
-   {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
-      datum baseAddress
-      {
-         value = "528";
-         type = "String";
-      }
-   }
-   element lm96570_spi_out_2
+   element pulse_init_delay
    {
       datum _sortIndex
       {
          value = "35";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
-   element lm96570_spi_out_2.s1
+   element pulse_init_delay.s1
    {
       datum _lockedAddress
       {
@@ -790,43 +1017,37 @@
       }
       datum baseAddress
       {
-         value = "512";
+         value = "1232";
          type = "String";
       }
    }
-   element lm96570_spi_pll
+   element pulse_pll
    {
       datum _sortIndex
       {
          value = "38";
          type = "int";
       }
-   }
-   element mm_bridge_0
-   {
-      datum _sortIndex
-      {
-         value = "2";
-         type = "int";
-      }
-   }
-   element mm_bridge_0.s0
-   {
-      datum baseAddress
+      datum sopceditor_expanded
       {
          value = "0";
-         type = "String";
+         type = "boolean";
       }
    }
-   element mux_control
+   element pulse_pll_reconfig
    {
       datum _sortIndex
       {
-         value = "43";
+         value = "39";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
-   element mux_control.s1
+   element pulse_pll_reconfig.mgmt_avalon_slave
    {
       datum _lockedAddress
       {
@@ -835,7 +1056,33 @@
       }
       datum baseAddress
       {
-         value = "384";
+         value = "768";
+         type = "String";
+      }
+   }
+   element pulse_tx_len
+   {
+      datum _sortIndex
+      {
+         value = "36";
+         type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
+   }
+   element pulse_tx_len.s1
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "1216";
          type = "String";
       }
    }
@@ -846,17 +1093,22 @@
          value = "3";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element sysid_qsys.control_slave
    {
       datum _lockedAddress
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
       datum baseAddress
       {
-         value = "1120";
+         value = "1296";
          type = "String";
       }
    }
@@ -998,30 +1250,33 @@
    internal="led_pio.external_connection"
    type="conduit"
    dir="end" />
- <interface
-   name="lm96570_spi_in_0"
-   internal="lm96570_spi_in_0.external_connection" />
- <interface
-   name="lm96570_spi_in_1"
-   internal="lm96570_spi_in_1.external_connection" />
- <interface
-   name="lm96570_spi_in_2"
-   internal="lm96570_spi_in_2.external_connection" />
- <interface
-   name="lm96570_spi_num_of_bits"
-   internal="lm96570_spi_num_of_bits.external_connection" />
- <interface
-   name="lm96570_spi_out_0"
-   internal="lm96570_spi_out_0.external_connection" />
- <interface
-   name="lm96570_spi_out_1"
-   internal="lm96570_spi_out_1.external_connection" />
- <interface
-   name="lm96570_spi_out_2"
-   internal="lm96570_spi_out_2.external_connection" />
- <interface name="lm96570_spi_pll_outclk0" internal="lm96570_spi_pll.outclk0" />
  <interface name="memory" internal="hps_0.memory" type="conduit" dir="end" />
- <interface name="mux_control" internal="mux_control.external_connection" />
+ <interface name="mux_spi" internal="mux_spi.external" type="conduit" dir="end" />
+ <interface
+   name="pulse_damp_len"
+   internal="pulse_damp_len.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="pulse_init_delay"
+   internal="pulse_init_delay.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="pulse_pll_locked"
+   internal="pulse_pll.locked"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="pulse_pll_out"
+   internal="pulse_pll.outclk0"
+   type="clock"
+   dir="start" />
+ <interface
+   name="pulse_tx_len"
+   internal="pulse_tx_len.external_connection"
+   type="conduit"
+   dir="end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
  <module
    name="ADC_INIT_DELAY"
@@ -2147,10 +2402,44 @@
   <parameter name="width" value="10" />
  </module>
  <module
-   name="lm96570_spi_in_0"
+   name="mm_bridge_0"
+   kind="altera_avalon_mm_bridge"
+   version="17.1"
+   enabled="1">
+  <parameter name="ADDRESS_UNITS" value="SYMBOLS" />
+  <parameter name="ADDRESS_WIDTH" value="10" />
+  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="LINEWRAPBURSTS" value="0" />
+  <parameter name="MAX_BURST_SIZE" value="1" />
+  <parameter name="MAX_PENDING_RESPONSES" value="4" />
+  <parameter name="PIPELINE_COMMAND" value="1" />
+  <parameter name="PIPELINE_RESPONSE" value="1" />
+  <parameter name="SYMBOL_WIDTH" value="8" />
+  <parameter name="SYSINFO_ADDR_WIDTH" value="18" />
+  <parameter name="USE_AUTO_ADDRESS_WIDTH" value="1" />
+  <parameter name="USE_RESPONSE" value="0" />
+ </module>
+ <module name="mux_spi" kind="altera_avalon_spi" version="17.1" enabled="1">
+  <parameter name="avalonSpec" value="2.0" />
+  <parameter name="clockPhase" value="0" />
+  <parameter name="clockPolarity" value="0" />
+  <parameter name="dataWidth" value="8" />
+  <parameter name="disableAvalonFlowControl" value="false" />
+  <parameter name="inputClockRate" value="50000000" />
+  <parameter name="insertDelayBetweenSlaveSelectAndSClk" value="false" />
+  <parameter name="insertSync" value="false" />
+  <parameter name="lsbOrderedFirst" value="false" />
+  <parameter name="masterSPI" value="true" />
+  <parameter name="numberOfSlaves" value="1" />
+  <parameter name="syncRegDepth" value="2" />
+  <parameter name="targetClockRate" value="128000" />
+  <parameter name="targetSlaveSelectToSClkDelay" value="0.0" />
+ </module>
+ <module
+   name="pulse_damp_len"
    kind="altera_avalon_pio"
    version="17.1"
-   enabled="0">
+   enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -2162,13 +2451,13 @@
   <parameter name="resetValue" value="0" />
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="32" />
+  <parameter name="width" value="8" />
  </module>
  <module
-   name="lm96570_spi_in_1"
+   name="pulse_init_delay"
    kind="altera_avalon_pio"
    version="17.1"
-   enabled="0">
+   enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -2180,99 +2469,9 @@
   <parameter name="resetValue" value="0" />
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="32" />
+  <parameter name="width" value="8" />
  </module>
- <module
-   name="lm96570_spi_in_2"
-   kind="altera_avalon_pio"
-   version="17.1"
-   enabled="0">
-  <parameter name="bitClearingEdgeCapReg" value="false" />
-  <parameter name="bitModifyingOutReg" value="false" />
-  <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="50000000" />
-  <parameter name="direction" value="Output" />
-  <parameter name="edgeType" value="RISING" />
-  <parameter name="generateIRQ" value="false" />
-  <parameter name="irqType" value="LEVEL" />
-  <parameter name="resetValue" value="0" />
-  <parameter name="simDoTestBenchWiring" value="false" />
-  <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="6" />
- </module>
- <module
-   name="lm96570_spi_num_of_bits"
-   kind="altera_avalon_pio"
-   version="17.1"
-   enabled="0">
-  <parameter name="bitClearingEdgeCapReg" value="false" />
-  <parameter name="bitModifyingOutReg" value="false" />
-  <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="50000000" />
-  <parameter name="direction" value="Output" />
-  <parameter name="edgeType" value="RISING" />
-  <parameter name="generateIRQ" value="false" />
-  <parameter name="irqType" value="LEVEL" />
-  <parameter name="resetValue" value="0" />
-  <parameter name="simDoTestBenchWiring" value="false" />
-  <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="32" />
- </module>
- <module
-   name="lm96570_spi_out_0"
-   kind="altera_avalon_pio"
-   version="17.1"
-   enabled="0">
-  <parameter name="bitClearingEdgeCapReg" value="false" />
-  <parameter name="bitModifyingOutReg" value="false" />
-  <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="50000000" />
-  <parameter name="direction" value="Input" />
-  <parameter name="edgeType" value="RISING" />
-  <parameter name="generateIRQ" value="false" />
-  <parameter name="irqType" value="LEVEL" />
-  <parameter name="resetValue" value="0" />
-  <parameter name="simDoTestBenchWiring" value="false" />
-  <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="32" />
- </module>
- <module
-   name="lm96570_spi_out_1"
-   kind="altera_avalon_pio"
-   version="17.1"
-   enabled="0">
-  <parameter name="bitClearingEdgeCapReg" value="false" />
-  <parameter name="bitModifyingOutReg" value="false" />
-  <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="50000000" />
-  <parameter name="direction" value="Input" />
-  <parameter name="edgeType" value="RISING" />
-  <parameter name="generateIRQ" value="false" />
-  <parameter name="irqType" value="LEVEL" />
-  <parameter name="resetValue" value="0" />
-  <parameter name="simDoTestBenchWiring" value="false" />
-  <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="32" />
- </module>
- <module
-   name="lm96570_spi_out_2"
-   kind="altera_avalon_pio"
-   version="17.1"
-   enabled="0">
-  <parameter name="bitClearingEdgeCapReg" value="false" />
-  <parameter name="bitModifyingOutReg" value="false" />
-  <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="50000000" />
-  <parameter name="direction" value="Input" />
-  <parameter name="edgeType" value="RISING" />
-  <parameter name="generateIRQ" value="false" />
-  <parameter name="irqType" value="LEVEL" />
-  <parameter name="resetValue" value="0" />
-  <parameter name="simDoTestBenchWiring" value="false" />
-  <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="6" />
- </module>
- <module name="lm96570_spi_pll" kind="altera_pll" version="17.1" enabled="0">
+ <module name="pulse_pll" kind="altera_pll" version="17.1" enabled="1">
   <parameter name="debug_print_output" value="false" />
   <parameter name="debug_use_rbc_taf_method" value="false" />
   <parameter name="device" value="5CSXFC6D6F31C6" />
@@ -2380,7 +2579,7 @@
   <parameter name="gui_en_adv_params" value="false" />
   <parameter name="gui_en_dps_ports" value="false" />
   <parameter name="gui_en_phout_ports" value="false" />
-  <parameter name="gui_en_reconf" value="false" />
+  <parameter name="gui_en_reconf" value="true" />
   <parameter name="gui_enable_cascade_in" value="false" />
   <parameter name="gui_enable_cascade_out" value="false" />
   <parameter name="gui_enable_mif_dps" value="false" />
@@ -2391,7 +2590,7 @@
   <parameter name="gui_multiply_factor" value="1" />
   <parameter name="gui_number_of_clocks" value="1" />
   <parameter name="gui_operation_mode" value="direct" />
-  <parameter name="gui_output_clock_frequency0" value="2.0" />
+  <parameter name="gui_output_clock_frequency0" value="4.0" />
   <parameter name="gui_output_clock_frequency1" value="100.0" />
   <parameter name="gui_output_clock_frequency10" value="100.0" />
   <parameter name="gui_output_clock_frequency11" value="100.0" />
@@ -2449,7 +2648,7 @@
   <parameter name="gui_pll_auto_reset" value="Off" />
   <parameter name="gui_pll_bandwidth_preset" value="Auto" />
   <parameter name="gui_pll_cascading_mode">Create an adjpllin signal to connect with an upstream PLL</parameter>
-  <parameter name="gui_pll_mode" value="Integer-N PLL" />
+  <parameter name="gui_pll_mode" value="Fractional-N PLL" />
   <parameter name="gui_ps_units0" value="ps" />
   <parameter name="gui_ps_units1" value="ps" />
   <parameter name="gui_ps_units10" value="ps" />
@@ -2473,31 +2672,23 @@
   <parameter name="gui_reference_clock_frequency" value="50.0" />
   <parameter name="gui_switchover_delay" value="0" />
   <parameter name="gui_switchover_mode">Automatic Switchover</parameter>
-  <parameter name="gui_use_locked" value="false" />
+  <parameter name="gui_use_locked" value="true" />
  </module>
  <module
-   name="mm_bridge_0"
-   kind="altera_avalon_mm_bridge"
+   name="pulse_pll_reconfig"
+   kind="altera_pll_reconfig"
    version="17.1"
    enabled="1">
-  <parameter name="ADDRESS_UNITS" value="SYMBOLS" />
-  <parameter name="ADDRESS_WIDTH" value="10" />
-  <parameter name="DATA_WIDTH" value="32" />
-  <parameter name="LINEWRAPBURSTS" value="0" />
-  <parameter name="MAX_BURST_SIZE" value="1" />
-  <parameter name="MAX_PENDING_RESPONSES" value="4" />
-  <parameter name="PIPELINE_COMMAND" value="1" />
-  <parameter name="PIPELINE_RESPONSE" value="1" />
-  <parameter name="SYMBOL_WIDTH" value="8" />
-  <parameter name="SYSINFO_ADDR_WIDTH" value="18" />
-  <parameter name="USE_AUTO_ADDRESS_WIDTH" value="1" />
-  <parameter name="USE_RESPONSE" value="0" />
+  <parameter name="ENABLE_BYTEENABLE" value="false" />
+  <parameter name="ENABLE_MIF" value="false" />
+  <parameter name="MIF_FILE_NAME" value="" />
+  <parameter name="device_family" value="Cyclone V" />
  </module>
  <module
-   name="mux_control"
+   name="pulse_tx_len"
    kind="altera_avalon_pio"
    version="17.1"
-   enabled="0">
+   enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -2509,7 +2700,7 @@
   <parameter name="resetValue" value="0" />
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="11" />
+  <parameter name="width" value="8" />
  </module>
  <module
    name="sysid_qsys"
@@ -2551,7 +2742,7 @@
    start="mm_bridge_0.m0"
    end="sysid_qsys.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0460" />
+  <parameter name="baseAddress" value="0x0510" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2569,7 +2760,7 @@
    start="mm_bridge_0.m0"
    end="fifo_sink_CH_B.in_csr">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0420" />
+  <parameter name="baseAddress" value="0x04a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2578,7 +2769,7 @@
    start="mm_bridge_0.m0"
    end="fifo_sink_CH_C.in_csr">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x03c0" />
+  <parameter name="baseAddress" value="0x0480" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2587,7 +2778,7 @@
    start="mm_bridge_0.m0"
    end="fifo_sink_CH_D.in_csr">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0380" />
+  <parameter name="baseAddress" value="0x0460" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2596,7 +2787,7 @@
    start="mm_bridge_0.m0"
    end="fifo_sink_CH_E.in_csr">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0340" />
+  <parameter name="baseAddress" value="0x0440" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2605,7 +2796,7 @@
    start="mm_bridge_0.m0"
    end="fifo_sink_CH_F.in_csr">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0320" />
+  <parameter name="baseAddress" value="0x0420" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2614,7 +2805,7 @@
    start="mm_bridge_0.m0"
    end="fifo_sink_CH_G.in_csr">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x02c0" />
+  <parameter name="baseAddress" value="0x0400" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2623,7 +2814,16 @@
    start="mm_bridge_0.m0"
    end="fifo_sink_CH_H.in_csr">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0160" />
+  <parameter name="baseAddress" value="0x02e0" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="mm_bridge_0.m0"
+   end="pulse_pll_reconfig.mgmt_avalon_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0300" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2641,7 +2841,7 @@
    start="mm_bridge_0.m0"
    end="fifo_sink_CH_B.out">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0458" />
+  <parameter name="baseAddress" value="0x0508" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2650,7 +2850,7 @@
    start="mm_bridge_0.m0"
    end="fifo_sink_CH_C.out">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0450" />
+  <parameter name="baseAddress" value="0x0500" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2659,7 +2859,7 @@
    start="mm_bridge_0.m0"
    end="fifo_sink_CH_D.out">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0448" />
+  <parameter name="baseAddress" value="0x04f8" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2668,7 +2868,7 @@
    start="mm_bridge_0.m0"
    end="fifo_sink_CH_E.out">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0440" />
+  <parameter name="baseAddress" value="0x04f0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2677,7 +2877,7 @@
    start="mm_bridge_0.m0"
    end="fifo_sink_CH_F.out">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0298" />
+  <parameter name="baseAddress" value="0x04e8" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2686,7 +2886,7 @@
    start="mm_bridge_0.m0"
    end="fifo_sink_CH_G.out">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0198" />
+  <parameter name="baseAddress" value="0x04e0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2695,7 +2895,7 @@
    start="mm_bridge_0.m0"
    end="fifo_sink_CH_H.out">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0190" />
+  <parameter name="baseAddress" value="0x0298" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2713,7 +2913,7 @@
    start="mm_bridge_0.m0"
    end="fifo_sink_CH_B.out_csr">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0400" />
+  <parameter name="baseAddress" value="0x02c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2722,7 +2922,7 @@
    start="mm_bridge_0.m0"
    end="fifo_sink_CH_C.out_csr">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x03e0" />
+  <parameter name="baseAddress" value="0x02a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2731,7 +2931,7 @@
    start="mm_bridge_0.m0"
    end="fifo_sink_CH_D.out_csr">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x03a0" />
+  <parameter name="baseAddress" value="0x0240" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2740,7 +2940,7 @@
    start="mm_bridge_0.m0"
    end="fifo_sink_CH_E.out_csr">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0360" />
+  <parameter name="baseAddress" value="0x0220" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2749,7 +2949,7 @@
    start="mm_bridge_0.m0"
    end="fifo_sink_CH_F.out_csr">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0300" />
+  <parameter name="baseAddress" value="0x0200" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2758,7 +2958,7 @@
    start="mm_bridge_0.m0"
    end="fifo_sink_CH_G.out_csr">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x02e0" />
+  <parameter name="baseAddress" value="0x0180" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2767,7 +2967,7 @@
    start="mm_bridge_0.m0"
    end="fifo_sink_CH_H.out_csr">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x02a0" />
+  <parameter name="baseAddress" value="0x0160" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2797,60 +2997,6 @@
    kind="avalon"
    version="17.1"
    start="mm_bridge_0.m0"
-   end="lm96570_spi_in_0.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0250" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.1"
-   start="mm_bridge_0.m0"
-   end="lm96570_spi_in_1.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0240" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.1"
-   start="mm_bridge_0.m0"
-   end="lm96570_spi_in_2.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0230" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.1"
-   start="mm_bridge_0.m0"
-   end="lm96570_spi_out_0.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0220" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.1"
-   start="mm_bridge_0.m0"
-   end="lm96570_spi_out_1.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0210" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.1"
-   start="mm_bridge_0.m0"
-   end="lm96570_spi_out_2.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0200" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.1"
-   start="mm_bridge_0.m0"
    end="general_cnt_out.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x01f0" />
@@ -2863,15 +3009,6 @@
    end="general_cnt_in.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x01e0" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.1"
-   start="mm_bridge_0.m0"
-   end="lm96570_spi_num_of_bits.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01d0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2905,9 +3042,27 @@
    kind="avalon"
    version="17.1"
    start="mm_bridge_0.m0"
-   end="mux_control.s1">
+   end="pulse_init_delay.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0180" />
+  <parameter name="baseAddress" value="0x04d0" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="mm_bridge_0.m0"
+   end="pulse_tx_len.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x04c0" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="mm_bridge_0.m0"
+   end="pulse_damp_len.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01d0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2917,6 +3072,15 @@
    end="ad9276_spi.spi_control_port">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0140" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="mm_bridge_0.m0"
+   end="mux_spi.spi_control_port">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0520" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2943,7 +3107,7 @@
    start="fpga_only_master.master"
    end="sysid_qsys.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0460" />
+  <parameter name="baseAddress" value="0x0510" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3058,47 +3222,12 @@
    kind="clock"
    version="17.1"
    start="clk_0.clk"
-   end="lm96570_spi_in_0.clk" />
- <connection
-   kind="clock"
-   version="17.1"
-   start="clk_0.clk"
-   end="lm96570_spi_in_1.clk" />
- <connection
-   kind="clock"
-   version="17.1"
-   start="clk_0.clk"
-   end="lm96570_spi_in_2.clk" />
- <connection
-   kind="clock"
-   version="17.1"
-   start="clk_0.clk"
-   end="lm96570_spi_out_0.clk" />
- <connection
-   kind="clock"
-   version="17.1"
-   start="clk_0.clk"
-   end="lm96570_spi_out_1.clk" />
- <connection
-   kind="clock"
-   version="17.1"
-   start="clk_0.clk"
-   end="lm96570_spi_out_2.clk" />
- <connection
-   kind="clock"
-   version="17.1"
-   start="clk_0.clk"
    end="general_cnt_out.clk" />
  <connection
    kind="clock"
    version="17.1"
    start="clk_0.clk"
    end="general_cnt_in.clk" />
- <connection
-   kind="clock"
-   version="17.1"
-   start="clk_0.clk"
-   end="lm96570_spi_num_of_bits.clk" />
  <connection
    kind="clock"
    version="17.1"
@@ -3114,7 +3243,18 @@
    version="17.1"
    start="clk_0.clk"
    end="ADC_START_pulselength.clk" />
- <connection kind="clock" version="17.1" start="clk_0.clk" end="mux_control.clk" />
+ <connection
+   kind="clock"
+   version="17.1"
+   start="clk_0.clk"
+   end="pulse_init_delay.clk" />
+ <connection kind="clock" version="17.1" start="clk_0.clk" end="pulse_tx_len.clk" />
+ <connection
+   kind="clock"
+   version="17.1"
+   start="clk_0.clk"
+   end="pulse_damp_len.clk" />
+ <connection kind="clock" version="17.1" start="clk_0.clk" end="mux_spi.clk" />
  <connection
    kind="clock"
    version="17.1"
@@ -3179,7 +3319,8 @@
    kind="clock"
    version="17.1"
    start="clk_0.clk"
-   end="lm96570_spi_pll.refclk" />
+   end="pulse_pll_reconfig.mgmt_clk" />
+ <connection kind="clock" version="17.1" start="clk_0.clk" end="pulse_pll.refclk" />
  <connection
    kind="clock"
    version="17.1"
@@ -3261,6 +3402,28 @@
    start="fifo_clk_bridge.out_clk"
    end="fifo_sink_CH_H.clk_in" />
  <connection
+   kind="conduit"
+   version="17.1"
+   start="pulse_pll.reconfig_from_pll"
+   end="pulse_pll_reconfig.reconfig_from_pll">
+  <parameter name="endPort" value="" />
+  <parameter name="endPortLSB" value="0" />
+  <parameter name="startPort" value="" />
+  <parameter name="startPortLSB" value="0" />
+  <parameter name="width" value="0" />
+ </connection>
+ <connection
+   kind="conduit"
+   version="17.1"
+   start="pulse_pll.reconfig_to_pll"
+   end="pulse_pll_reconfig.reconfig_to_pll">
+  <parameter name="endPort" value="" />
+  <parameter name="endPortLSB" value="0" />
+  <parameter name="startPort" value="" />
+  <parameter name="startPortLSB" value="0" />
+  <parameter name="width" value="0" />
+ </connection>
+ <connection
    kind="interrupt"
    version="17.1"
    start="hps_0.f2h_irq0"
@@ -3287,6 +3450,13 @@
    start="hps_0.f2h_irq1"
    end="ad9276_spi.irq">
   <parameter name="irqNumber" value="0" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="17.1"
+   start="hps_0.f2h_irq1"
+   end="mux_spi.irq">
+  <parameter name="irqNumber" value="1" />
  </connection>
  <connection kind="interrupt" version="17.1" start="ILC.irq" end="jtag_uart.irq">
   <parameter name="irqNumber" value="0" />
@@ -3356,6 +3526,11 @@
    kind="reset"
    version="17.1"
    start="clk_0.clk_reset"
+   end="pulse_pll_reconfig.mgmt_reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="clk_0.clk_reset"
    end="sysid_qsys.reset" />
  <connection
    kind="reset"
@@ -3391,52 +3566,12 @@
    kind="reset"
    version="17.1"
    start="clk_0.clk_reset"
-   end="lm96570_spi_in_0.reset" />
- <connection
-   kind="reset"
-   version="17.1"
-   start="clk_0.clk_reset"
-   end="lm96570_spi_in_1.reset" />
- <connection
-   kind="reset"
-   version="17.1"
-   start="clk_0.clk_reset"
-   end="lm96570_spi_in_2.reset" />
- <connection
-   kind="reset"
-   version="17.1"
-   start="clk_0.clk_reset"
-   end="lm96570_spi_out_0.reset" />
- <connection
-   kind="reset"
-   version="17.1"
-   start="clk_0.clk_reset"
-   end="lm96570_spi_out_1.reset" />
- <connection
-   kind="reset"
-   version="17.1"
-   start="clk_0.clk_reset"
-   end="lm96570_spi_out_2.reset" />
- <connection
-   kind="reset"
-   version="17.1"
-   start="clk_0.clk_reset"
    end="general_cnt_out.reset" />
  <connection
    kind="reset"
    version="17.1"
    start="clk_0.clk_reset"
    end="general_cnt_in.reset" />
- <connection
-   kind="reset"
-   version="17.1"
-   start="clk_0.clk_reset"
-   end="lm96570_spi_pll.reset" />
- <connection
-   kind="reset"
-   version="17.1"
-   start="clk_0.clk_reset"
-   end="lm96570_spi_num_of_bits.reset" />
  <connection
    kind="reset"
    version="17.1"
@@ -3456,7 +3591,27 @@
    kind="reset"
    version="17.1"
    start="clk_0.clk_reset"
-   end="mux_control.reset" />
+   end="pulse_init_delay.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="clk_0.clk_reset"
+   end="pulse_tx_len.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="clk_0.clk_reset"
+   end="pulse_damp_len.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="clk_0.clk_reset"
+   end="pulse_pll.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="clk_0.clk_reset"
+   end="mux_spi.reset" />
  <connection
    kind="reset"
    version="17.1"
